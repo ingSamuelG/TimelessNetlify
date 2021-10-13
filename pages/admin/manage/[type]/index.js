@@ -443,6 +443,8 @@ const Index = () => {
     )
 }
 
+Index.displayName = 'MydataGridManage';
+
 Index.layout = 'admin'
 
 export default Index
