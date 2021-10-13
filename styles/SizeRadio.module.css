@@ -1,0 +1,47 @@
+.size-list {
+  list-style-type: none;
+  margin: 5px 0 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.size-list li {
+  float: left;
+  margin: 0 5px 0 0;
+  width: 70px;
+  height: 35px;
+  position: relative;
+}
+
+.size-list label,
+.size-list input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.size-list input[type="radio"] {
+  opacity: 0.01;
+  z-index: 2;
+}
+
+.size-list input[type="radio"]:checked + label,
+.Checked + label {
+  background: #f3f1f1;
+  border-radius: 5px;
+  border-color: #ff69b4;
+}
+
+.size-list label {
+  padding: 2px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.size-list label:hover {
+  background: #ddd;
+}

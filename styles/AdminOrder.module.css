@@ -1,0 +1,13 @@
+.container {
+  height: 80vh;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+.open {
+  margin-left: 260px;
+}

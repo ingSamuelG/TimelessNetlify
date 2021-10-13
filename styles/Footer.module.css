@@ -1,0 +1,25 @@
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1919;
+  height: 20vh;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .footer-wrapper {
+    height: auto;
+    text-align: center;
+    padding: 5%;
+  }
+}

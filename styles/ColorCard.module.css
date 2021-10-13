@@ -1,0 +1,16 @@
+.rounded {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .rounded {
+    width: 25px;
+    height: 25px;
+  }
+}

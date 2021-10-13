@@ -1,0 +1,71 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 75px;
+  background-color: #f1f1f3;
+  text-align: center;
+  /* color: #e3368c; */
+  margin: auto;
+  z-index: 98;
+  border: 0.5px dotted black;
+
+  /*  */
+  -webkit-box-shadow: 9px 7px 20px -7px rgba(0, 0, 0, 0.62);
+  box-shadow: 9px 7px 20px -7px rgba(0, 0, 0, 0.62);
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: white;
+}
+
+.card:hover .card-top {
+  background-color: white;
+}
+
+.card-top {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  background-color: #f1f1f3;
+  border-top: 0.5px dotted black;
+  border-left: 0.5px dotted black;
+  border-right: 0.5px dotted black;
+  height: 20px;
+  border-radius: 15px 15px 0px 0px;
+  width: 70px;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 99;
+}
+
+.circle {
+  position: absolute;
+  background-color: white;
+  border: 1px solid rgb(90, 90, 90);
+  border-radius: 150px;
+  top: -5px;
+  width: 15px;
+  height: 15px;
+  z-index: 101;
+  -webkit-box-shadow: 9px 7px 20px -7px rgba(0, 0, 0, 0.62);
+  box-shadow: 9px 7px 20px -7px rgba(0, 0, 0, 0.62);
+}
+
+.tittle {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #e3368c;
+}
+
+.data {
+  display: block;
+  font-size: 0.8em;
+}

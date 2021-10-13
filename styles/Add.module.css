@@ -1,0 +1,28 @@
+.container {
+  height: auto;
+  min-height: 80vh;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+
+.rounded {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.open {
+  margin-left: 260px;
+}
+
+.main {
+  width: 80%;
+}

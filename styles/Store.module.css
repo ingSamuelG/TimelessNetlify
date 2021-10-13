@@ -1,0 +1,9 @@
+.container {
+  min-height: 80vh;
+}
+
+.filterBtn {
+  position: sticky;
+  top: 150px;
+  left: 120px;
+}
