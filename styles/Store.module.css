@@ -7,3 +7,10 @@
   top: 150px;
   left: 120px;
 }
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .container {
+    padding-top: 200px;
+  }
+}
