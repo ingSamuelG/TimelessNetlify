@@ -14,5 +14,10 @@
 @media (max-width: 768px) {
   .container {
     height: auto;
+    width: auto;
+  }
+
+  .galery {
+    width: auto;
   }
 }
