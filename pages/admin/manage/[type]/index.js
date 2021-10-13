@@ -16,7 +16,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 
 
-const index = () => {
+const Index = () => {
 
     const { adminSideBarOpen, products, colors, sizes, brands, categories, subCategories } = useGlobalContext()
     const [pagesize, setPagesize] = useState(5)
@@ -443,6 +443,6 @@ const index = () => {
     )
 }
 
-index.layout = 'admin'
+Index.layout = 'admin'
 
-export default index
+export default Index

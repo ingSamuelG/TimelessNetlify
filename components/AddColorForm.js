@@ -47,7 +47,7 @@ const AddColorForm = ({ color }) => {
                             alignItems="center" spacing={5}>
 
                             <Grid item xs={6}>
-                                <label for="favcolor"><Typography variant="subtitle1">
+                                <label htmlFor="favcolor"><Typography variant="subtitle1">
                                     Seleccione hex/rgb:
                                 </Typography></label>
                             </Grid>

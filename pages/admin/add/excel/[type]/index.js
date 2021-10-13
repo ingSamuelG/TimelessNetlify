@@ -11,7 +11,7 @@ import CloudDoneIcon from '@mui/icons-material/CloudDone';
 import { useRouter } from 'next/router';
 import styles from '../../../../../styles/Add.module.css';
 
-const index = () => {
+const Index = () => {
     const { adminSideBarOpen } = useGlobalContext()
     const [progress, setProgress] = useState(0)
     const router = useRouter()
@@ -65,6 +65,6 @@ const index = () => {
     )
 }
 
-index.layout = 'admin'
+Index.layout = 'admin'
 
-export default index
+export default Index

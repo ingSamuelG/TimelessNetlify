@@ -12,7 +12,7 @@ import { data } from '../../../../PublicData'
 import { useRouter } from 'next/router';
 
 
-const index = ({ edit_object }) => {
+const Index = ({ edit_object }) => {
     const { adminSideBarOpen } = useGlobalContext()
 
     const router = useRouter()
@@ -144,6 +144,6 @@ export async function getServerSideProps(context) {
 // }
 
 
-index.layout = 'admin'
+Index.layout = 'admin'
 
-export default index
+export default Index

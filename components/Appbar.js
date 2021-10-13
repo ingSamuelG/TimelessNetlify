@@ -112,7 +112,7 @@ const Navbar = () => {
                                 {categories.map((category) => {
                                     return (
                                         <Grid key={category.id} item className={styles.nav_links} >
-                                            <Link href={`category/${category.name.toLowerCase()}`}  ><Typography id={category.name} className="" variant="overline" className={styles.link_btn} gutterBottom onMouseOver={displaySubmenu}>
+                                            <Link href={`category/${category.name.toLowerCase()}`}  ><Typography id={category.name} variant="overline" className={styles.link_btn} gutterBottom onMouseOver={displaySubmenu}>
                                                 {category.name}
                                             </Typography></Link>
                                         </Grid>)

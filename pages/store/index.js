@@ -6,7 +6,7 @@ import { useGlobalContext } from '../../context'
 import SideBarFilter from '../../components/SideBarFilter'
 import TuneIcon from '@mui/icons-material/Tune';
 
-const index = () => {
+const Index = () => {
     const { productsFilter, setFilterSideBarOpen, colorPressed, subCategoriesPressed, categoriesPressed, sizePressed, brandPressed } = useGlobalContext()
 
     const anyFilterPressed = (colorPressed.state || subCategoriesPressed.state || categoriesPressed.state || sizePressed.state)
@@ -36,6 +36,6 @@ const index = () => {
 }
 
 
-index.layout = 'main'
+Index.layout = 'main'
 
-export default index
+export default Index

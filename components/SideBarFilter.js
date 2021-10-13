@@ -59,7 +59,6 @@ export default function SideBarFilter() {
                     <Divider />
                 </ListSubheader>
             }
-            className={classes.root}
         >
             <ListItem>
                 <Grid container direction="row" justifyContent="center" alignItems="center" spacing={1}>

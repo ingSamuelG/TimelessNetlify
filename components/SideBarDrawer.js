@@ -14,6 +14,7 @@ import { useGlobalContext } from '../context';
 const useStyles = makeStyles({
     list: {
         width: 280,
+
     },
     fullList: {
         width: 'auto',
@@ -51,7 +52,6 @@ export default function SwipeableTemporaryDrawer() {
                     <Divider />
                 </ListSubheader>
             }
-            className={classes.root}
         >
             {categories.map((category) => {
                 return <SideBarItem key={category.id} category={category} />

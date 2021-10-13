@@ -12,7 +12,7 @@ const SizeRadio = ({ sizes }) => {
     }
 
     return (
-        <Grid container container direction="row"
+        <Grid container direction="row"
             justifyContent="center"
             alignItems="center">
             <Grid item xs={12}>
@@ -22,7 +22,7 @@ const SizeRadio = ({ sizes }) => {
             </Grid>
 
             <Grid item xs={12}>
-                <Grid container container direction="row"
+                <Grid container direction="row"
                     justifyContent="center"
                     alignItems="center">
                     <ul className={styles['size-list']}>

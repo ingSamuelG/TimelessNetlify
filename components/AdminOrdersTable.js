@@ -144,5 +144,6 @@ const AdminOrdersTable = () => {
     )
 }
 
+AdminOrdersTable.displayName = 'AdminOrdersTable';
 
 export default AdminOrdersTable

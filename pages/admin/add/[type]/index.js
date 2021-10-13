@@ -11,7 +11,7 @@ import AddProductForm from '../../../../components/AddProductForm';
 import { useRouter } from 'next/router';
 
 
-const index = () => {
+const Index = () => {
     const { adminSideBarOpen } = useGlobalContext()
 
     const router = useRouter()
@@ -72,6 +72,6 @@ const index = () => {
     </Typography></div>
 }
 
-index.layout = 'admin'
+Index.layout = 'admin'
 
-export default index
+export default Index

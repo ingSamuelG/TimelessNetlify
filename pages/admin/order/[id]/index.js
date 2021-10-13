@@ -9,7 +9,7 @@ import ProductOrderDetails from '../../../../components/ProductOrderDetails'
 import { useGlobalContext } from "../../../../context";
 
 
-const order = ({ order }) => {
+const Order = ({ order }) => {
     const { adminSideBarOpen } = useGlobalContext()
 
 
@@ -61,6 +61,6 @@ export const getStaticPaths = async () => {
 }
 
 
-order.layout = 'admin'
+Order.layout = 'admin'
 
-export default order
+export default Order
