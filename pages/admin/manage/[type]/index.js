@@ -16,7 +16,7 @@ import { DataGrid } from '@mui/x-data-grid';
 
 
 
-const Index = () => {
+function Index() {
 
     const { adminSideBarOpen, products, colors, sizes, brands, categories, subCategories } = useGlobalContext()
     const [pagesize, setPagesize] = useState(5)
@@ -134,7 +134,7 @@ const Index = () => {
                 field: 'hex',
                 headerName: 'Hex',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function hex(params) {
                     return <div className={styles.rounded} style={{ backgroundColor: `${params.value}` }}></div>
                 },
             },
@@ -443,7 +443,7 @@ const Index = () => {
     )
 }
 
-Index.displayName = 'MydataGridManage';
+
 
 Index.layout = 'admin'
 

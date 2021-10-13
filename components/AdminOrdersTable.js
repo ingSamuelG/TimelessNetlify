@@ -15,7 +15,7 @@ const columns = [
         field: 'id',
         headerName: 'ID de la orden',
         width: 250,
-        renderCell: (params) => {
+        renderCell: function Ids(params) {
             return <Link href="/admin/order/[id]" as={`/admin/order/${params.value}`}>{params.value}</Link>
             // <IconButton IconButton aria-label="Ver" size="small" >
             //     <VisibilityIcon fontSize="inherit" />

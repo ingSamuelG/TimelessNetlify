@@ -4,7 +4,7 @@ import styles from '../../styles/AdminOrder.module.css'
 import { useGlobalContext } from "../../context";
 
 
-const admin = () => {
+export default function admin() {
     const { adminSideBarOpen } = useGlobalContext()
 
     return (
@@ -16,4 +16,3 @@ const admin = () => {
 
 admin.layout = 'admin'
 
-export default admin
