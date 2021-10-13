@@ -142,7 +142,7 @@ const Index = () => {
                 field: 'acciones',
                 headerName: 'Acciones',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function Color(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
@@ -190,7 +190,7 @@ const Index = () => {
                 headerName: 'Acciones',
                 headerAlign: 'center',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function Sizes(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
@@ -240,7 +240,7 @@ const Index = () => {
                 flex: 1,
                 headerAlign: 'center',
                 align: 'center',
-                renderCell: (params) => {
+                renderCell: function Brands_img(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
@@ -268,7 +268,7 @@ const Index = () => {
                 headerName: 'Acciones',
                 headerAlign: 'center',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function Brands(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
@@ -317,7 +317,7 @@ const Index = () => {
                 headerName: 'Acciones',
                 headerAlign: 'center',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function Cate(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
@@ -382,7 +382,7 @@ const Index = () => {
                 headerName: 'Acciones',
                 headerAlign: 'center',
                 flex: 1,
-                renderCell: (params) => {
+                renderCell: function Subcat(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
