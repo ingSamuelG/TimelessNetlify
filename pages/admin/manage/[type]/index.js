@@ -86,7 +86,7 @@ const Index = () => {
                 headerName: 'Acciones',
                 sortable: true,
                 width: 180,
-                renderCell: (params) => {
+                renderCell: function Products(params) {
                     return <Grid container
                         direction="column"
                         justifyContent="center"
