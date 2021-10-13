@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from '../../../../styles/Order.module.css'
-import OrderDetails from '../../../../components/orderDetails';
+import OrderDetails from '../../../../components/OrderDetails';
 import { data } from '../../../../PublicData';
 import Typography from '@mui/material/Typography';
 // import ProductOrderDetails from '../components/ProductOrderDetails';
