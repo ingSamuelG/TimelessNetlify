@@ -13,7 +13,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import SwipeableTemporaryDrawer from './SideBarDrawer';
-import Submenu from './Submenu';
+import Submenu from '../components/SubMenu';
 import Link from 'next/link';
 import styles from '../styles/Navbar.module.css'
 import Image from 'next/image'
