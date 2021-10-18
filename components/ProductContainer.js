@@ -10,7 +10,6 @@ import { useGlobalContext } from '../context';
 const ProductContainer = ({ products, hasTittle = true, tittle = products[0].category.name }) => {
     const { setSubmenuClosed } = useGlobalContext()
 
-
     return (
         <div className={styles.wrapper} >
             <Grid

@@ -11,4 +11,9 @@
 
 .number {
   width: 60px;
+  height: 40px;
+}
+
+.textCenter {
+  text-align: center;
 }

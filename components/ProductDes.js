@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Button from '@mui/material/Button';
-import { QtyBtn } from './QtyBtn';
+import { QtyBtnAddToCart } from './QtyBtnAddToCart';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
@@ -15,37 +15,49 @@ import ProductAccor from './ProductAccor';
 import styles from '../styles/ProductDes.module.css'
 
 
+// tengo que usar porp dirriling con sizeselecte no tiene sentido usar el contexto global
 
 const ProductDes = ({ product }) => {
     const store = require('store')
-    const { sizeSelected, qtySelected, setSelecteSize, addToCart, setSelecteQty } = useGlobalContext()
+    const { addToCart } = useGlobalContext()
+    const { entry } = product
+    const [size, setSize] = useState("")
+    const [qty, setQty] = useState(1)
+
 
     let productQuantity = 0
     let productInCart = 0
-    const { entry } = product
+
+
+    useEffect(() => {
+        setSize(entry[0].size)
+
+    }, [])
 
     try {
         productQuantity = entry.filter((ent) => {
-            return ent.size == sizeSelected
+            return ent.size == size
         }).map((ent) => {
             return ent.qty
         }).reduce((total, current) => {
             return total + current
         })
 
-        // console.log(`productQuantity es :${productQuantity}`)
+        console.log(`productQuantity es :${productQuantity}`)
 
     } catch (error) {
-        setSelecteSize(entry[0].size)
+        productQuantity = entry[0].qty
+        console.log("entre por error" + productQuantity);
     }
 
     try {
         productInCart = store.get("cart").find((order) => {
-            return (order.product_id == product.id) && (order.size == sizeSelected)
+            return (order.product_id == product.id) && (order.size == size)
         }).qty
-        // console.log(`productInCart es :${productInCart}`)
+        console.log(`productInCart es :${productInCart}`)
     } catch (error) {
-        productInCart = 0
+
+        console.log("entre por error en porduct cart" + productInCart);
     }
 
 
@@ -56,32 +68,32 @@ const ProductDes = ({ product }) => {
 
 
         let ProductInLocal = localCart.find((prod) => {
-            return (prod.product_id == product.id) && (prod.size == sizeSelected)
+            return (prod.product_id == product.id) && (prod.size == size)
         })
+
 
 
         if (ProductInLocal) {
             let cartWithoutProduct = localCart.filter((prod) => {
-                return (product.id !== prod.product_id) || (prod.size !== sizeSelected)
+                return (product.id !== prod.product_id) || (prod.size !== size)
             })
 
-            console.log(cartWithoutProduct);
 
-
-            let withNewQty = { ...ProductInLocal, qty: ProductInLocal.qty + qtySelected, size: sizeSelected }
+            let withNewQty = { ...ProductInLocal, qty: ProductInLocal.qty + qty, size: size ? size : entry[0].size }
             addToCart([...cartWithoutProduct, withNewQty])
             store.set('cart', [...cartWithoutProduct, withNewQty])
         } else {
 
-            const newProduct = { product_id: product.id, short_description: product.short_description, price: product.discount_price, size: sizeSelected, qty: qtySelected }
+            const newProduct = { entry_id: `${product.id}-${size ? size : entry[0].size}`, product_id: product.id, short_description: product.short_description, price: product.discount_price, img: product.images[0], size: size ? size : entry[0].size, qty: qty }
+
             addToCart([...localCart, newProduct])
             store.set('cart', [...localCart, newProduct])
         }
 
         if (productInCart == 0) {
-            setSelecteQty(productQuantity - qtySelected)
+            setQty(productQuantity - qty)
         } else {
-            setSelecteQty(1)
+            setQty(1)
         }
 
 
@@ -151,12 +163,12 @@ const ProductDes = ({ product }) => {
 
                     <SizeRadio sizes={product.entry.map((entry) => {
                         return entry['size']
-                    })} />
+                    })} lSize={size} fun={setSize} setQty={setQty} />
 
                 </Grid>
 
                 <Grid item xs={12}>
-                    <QtyBtn product={product} qtyInCart={productInCart} />
+                    <QtyBtnAddToCart product={product} qtyInCart={productInCart} size={size} qty={qty} fun={setQty} />
                 </Grid>
 
                 <Grid item xs={12}>

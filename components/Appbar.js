@@ -142,9 +142,13 @@ const Navbar = () => {
                                     </IconButton>
                                 </Grid>
                                 <Grid item className='cl-btns'>
-                                    <Badge color="secondary" badgeContent={cartCount}>
-                                        <ShoppingCartOutlinedIcon color='secondary' />
-                                    </Badge>
+                                    <Link href="/carrito">
+                                        <IconButton aria-label="text our WhatsApp" size='small' color="inherit">
+                                            <Badge color="secondary" badgeContent={cartCount}>
+                                                <ShoppingCartOutlinedIcon color='secondary' />
+                                            </Badge>
+                                        </IconButton>
+                                    </Link>
                                 </Grid>
                                 <Grid item className='cl-btns'>
                                     <IconButton

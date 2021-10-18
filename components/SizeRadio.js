@@ -4,8 +4,8 @@ import Typography from '@mui/material/Typography';
 import { useGlobalContext } from '../context';
 import { Grid } from '@mui/material';
 
-const SizeRadio = ({ sizes }) => {
-    const { sizeSelected, setSelecteSize, qtySelected, setSelecteQty, } = useGlobalContext()
+const SizeRadio = ({ sizes, lSize, fun, setQty }) => {
+
 
     const handleValue = (value) => {
         setValue(value)
@@ -28,7 +28,7 @@ const SizeRadio = ({ sizes }) => {
                     <ul className={styles['size-list']}>
                         {sizes.map(size =>
                             <li key={`${size}-01`}>
-                                <input type="radio" id={size} name="sizes" onChange={() => { setSelecteSize(size), setSelecteQty(1) }} defaultChecked={sizeSelected == size ? true : false} />
+                                <input type="radio" id={size} name="sizes" onChange={() => { fun(size), setQty(1) }} defaultChecked={lSize == size ? true : false} />
                                 <label htmlFor={size}>
                                     <Typography variant="overline" display="block" gutterBottom>
                                         {size}

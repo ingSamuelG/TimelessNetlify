@@ -12,20 +12,20 @@ import TableRow from '@mui/material/TableRow';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 
+export function ccyFormat(num) {
+    return `$ ${num.toFixed(2)}`;
+}
+
+export function priceRow(qty, unit) {
+    return qty * unit;
+}
+
+export function subtotal(items) {
+    return items.map(({ price, qty }) => price * qty).reduce((sum, i) => sum + i, 0);
+}
 
 export const OrderCard = ({ order_details }) => {
 
-    function ccyFormat(num) {
-        return `$ ${num.toFixed(2)}`;
-    }
-
-    function priceRow(qty, unit) {
-        return qty * unit;
-    }
-
-    function subtotal(items) {
-        return items.map(({ price, qty }) => price * qty).reduce((sum, i) => sum + i, 0);
-    }
 
     const TAX_RATE = 0.07;
 

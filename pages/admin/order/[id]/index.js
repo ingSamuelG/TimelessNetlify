@@ -3,7 +3,6 @@ import styles from '../../../../styles/Order.module.css'
 import OrderDetails from '../../../../components/OrderDetails';
 import { data } from '../../../../PublicData';
 import Typography from '@mui/material/Typography';
-// import ProductOrderDetails from '../components/ProductOrderDetails';
 import Grid from '@mui/material/Grid';
 import ProductOrderDetails from '../../../../components/ProductOrderDetails'
 import { useGlobalContext } from "../../../../context";
