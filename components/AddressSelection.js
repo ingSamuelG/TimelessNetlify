@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@mui/material/Grid';
 import { ccyFormat, subtotal } from './ProductMobileTableCart';
 import Typography from '@mui/material/Typography';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
+import AddressCheckBox from './AddressCheckBox';
+import { data } from '../PublicData';
+import ShipmentTypeCheckBox from './ShipmentTypeCheckBox';
+import Button from '@mui/material/Button';
 
-export default function AddressSelection() {
+export default function AddressSelection({ addresses }) {
     const store = require('store')
     const cart = store.get('cart')
+    const [envio, setEnvio] = useState(300)
+    const [address, setAddress] = useState("")
 
     return (
         <Grid container direction="row"
@@ -23,14 +24,14 @@ export default function AddressSelection() {
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center" }} >
                 <Typography variant="overline">
-                    Total:
+                    SubTotal:
                 </Typography>
             </Grid>
 
-            <Grid item xs={6}>
-                <Typography variant="h6" color="secondary" style={{ textAlign: "center" }}>
+            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }}>
+                <Typography variant="body1" >
                     {ccyFormat(subtotal(cart))}
                 </Typography>
             </Grid>
@@ -42,23 +43,53 @@ export default function AddressSelection() {
             </Grid>
 
             <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
-                <Typography variant="overline">
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">Tipo de envio</FormLabel>
-                        <RadioGroup
-                            aria-label="Tipo de envio"
-                            defaultValue="Tipo 1"
-                            name="radio-buttons-group"
-                        >
-                            <FormControlLabel value="Tipo 1" control={<Radio />} label="Tipo 1" />
-                            <FormControlLabel value="Tipo 2" control={<Radio />} label="Tipo 2" />
-                            <FormControlLabel value="Tipo 3" control={<Radio />} label="Tipo 3" />
-                        </RadioGroup>
-                    </FormControl>
-                </Typography>
+                {/* # this should be dinamic  */}
+                <ShipmentTypeCheckBox types={[{ label: "Tipo I", cost: 300 },
+                { label: "Tipo II", cost: 400 },
+                { label: "Tipo III", cost: 500 }]} fun={setEnvio} />
             </Grid>
 
 
-        </Grid>
+            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+                {/* # this should be dinamic  */}
+                <Typography variant="overline">
+                    Dirección:
+                </Typography>
+            </Grid>
+
+            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+                {/* # this should be dinamic  */}
+                <AddressCheckBox addresses={data.user.address} fun={setAddress} />
+            </Grid>
+
+            <Grid item xs={6} style={{ textAlign: "center" }} >
+                <Typography variant="overline">
+                    Total:
+                </Typography>
+            </Grid>
+
+            <Grid item xs={6}>
+                <Typography variant="h6" color="secondary" style={{ textAlign: "center" }}>
+                    {ccyFormat(subtotal(cart) + parseInt(envio))}
+                </Typography>
+            </Grid>
+
+            <Grid item xs={6} style={{ textAlign: "center", borderTop: "1px solid #dbd9d9" }} >
+                <Button variant="contained" fullWidth>Finalizar Compra</Button>
+            </Grid>
+
+        </Grid >
     )
+
 }
+
+// this code is only for front end testing propuse we shuld get the product from a api or fetch
+
+// export const getStaticProps = async (context) => {
+//     const addresses = data.user.address
+//     return {
+//         props: {
+//             addresses,
+//         },
+//     }
+// }

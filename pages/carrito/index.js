@@ -8,7 +8,6 @@ import AddressSelection from '../../components/AddressSelection';
 import Grid from '@mui/material/Grid';
 
 export default function Index() {
-    const store = require('store')
     const { setSubmenuClosed } = useGlobalContext()
 
     return (
@@ -28,12 +27,9 @@ export default function Index() {
                     </Grid>
 
                     <Grid item xs={6}>
-                        <Typography variant="overline">
-                            vacio
-                        </Typography>
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item lg={6} xs={12}>
                         <AddressSelection />
                     </Grid>
 

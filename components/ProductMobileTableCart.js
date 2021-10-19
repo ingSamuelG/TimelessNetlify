@@ -37,7 +37,7 @@ const ProductMobileTableCart = () => {
                 justifyContent="center"
                 alignItems="center"
                 spacing={2}
-                style={{ padding: '50px' }}>
+                style={{ padding: '50px', textAlign: "center" }}>
 
                 <Grid item xs={3} style={{ textAlign: "center" }}>
                     <Typography variant="button" display="block" gutterBottom>
@@ -64,76 +64,13 @@ const ProductMobileTableCart = () => {
                 </Grid>
 
                 {cart.map((product) => {
-                    return (<Grid key={product.entry_id} item xs={12}>
-                        <ProductRowMobile product={product} />
-                    </Grid>)
+                    return (
+                        <ProductRowMobile key={product.entry_id} product={product} />
+                    )
                 })}
 
-                <Grid item xs={3} >
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "right" }}  >
-                    <Typography variant="overline" display="block" gutterBottom>
-                        Subtotal:
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "center" }}>
-                    {`${totalQty} items `}
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "center" }}>
-                    <Typography variant="caption" display="block" gutterBottom>
-                        {ccyFormat(subtotalAmount)}
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={3} >
-
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "right" }}>
-                    <Typography variant="overline" display="block" gutterBottom>
-                        Impuesto:
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "center" }} >
-                    7%
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "center" }}>
-                    <Typography variant="caption" display="block" gutterBottom>
-                        {`${ccyFormat(taxAmount)}`}
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={3} >
-                </Grid>
-
-                <Grid item xs={9} >
-                    <Divider />
-                </Grid>
-
-                <Grid item xs={3} >
-
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "right" }}>
-
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "right" }} >
-                    <Typography variant="overline" display="block" gutterBottom>
-                        Total:
-                    </Typography>
-                </Grid>
-
-                <Grid item xs={3} style={{ textAlign: "center" }}>
-                    <Typography variant="caption" display="block" gutterBottom>
-                        {`${ccyFormat((taxAmount + subtotalAmount))}`}
-                    </Typography>
-                </Grid>
+                {/* 
+                >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */}
 
 
 

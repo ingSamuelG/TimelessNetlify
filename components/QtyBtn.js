@@ -29,8 +29,14 @@ export const QtyBtn = ({ row }) => {
             margin: "auto",
             "& .MuiInputBase-input": {
                 textAlign: "center",
-                width: "60px",
-                height: "27px"
+                height: "3px"
+            }
+            , "@media (max-width: 768px)":
+            {
+                "& .MuiInputBase-input": {
+                    textAlign: "center",
+                }
+
             }
         }
     }))
@@ -150,21 +156,17 @@ export const QtyBtn = ({ row }) => {
 
 
     return (
-        <div>
+        <>
             <Grid container direction="row"
                 justifyContent="center"
                 alignItems="center" spacing={2}>
-                <Grid item xs={12}>
-                    <Typography variant="caption" display="block" >
-                        Cantidad:
-                    </Typography>
-                </Grid>
+
                 <Grid item xs={12}>
                     <Grid container direction="row"
                         justifyContent="center"
                         alignItems="center">
 
-                        <Grid item  >
+                        <Grid item lg={4} xs={12} >
                             <div className={styles.grid}>
                                 <IconButton aria-label="delete" onClick={() => {
                                     handleQuantitiesClick(parseInt(regularQty), "Remove")
@@ -174,7 +176,7 @@ export const QtyBtn = ({ row }) => {
                             </div>
                         </Grid>
 
-                        <Grid item >
+                        <Grid item lg={4} xs={12} >
                             <div className={classes.root}>
                                 <OutlinedInput
                                     id="outlined-qty"
@@ -191,7 +193,7 @@ export const QtyBtn = ({ row }) => {
                             </div>
                         </Grid>
 
-                        <Grid item>
+                        <Grid item lg={4} xs={12}>
                             <div className={styles.grid}>
                                 <IconButton aria-label="add more" onClick={() => {
                                     handleQuantitiesClick(parseInt(regularQty), "Add")
@@ -209,6 +211,6 @@ export const QtyBtn = ({ row }) => {
                     </Typography>) : ""}
                 </Grid>
             </Grid>
-        </div>
+        </>
     )
 }

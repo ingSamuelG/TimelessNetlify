@@ -23,7 +23,6 @@ if (cart) {
 
 function MyApp({ Component, pageProps }) {
 
-
   const Layout = layouts[Component.layout] || (({ children }) => <>{children}</>);
 
   return (

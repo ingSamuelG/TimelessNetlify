@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styles from '../styles/QtyBtn.module.css';
+import styles from '../styles/QtyProduct.module.css';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import DeleteIcon from '@mui/icons-material/Delete';
