@@ -136,6 +136,18 @@ function AppProvider({ children }) {
         dispatch({ type: "SET-BRAND-PRESSED", payload: value });
     }
 
+    const setMyAddresses = (value) => {
+        console.log("Vieja address")
+        console.log(state.myAddresses);
+        dispatch({ type: "SET-MY-ADDRESSES", payload: value });
+        console.log("nueva address")
+        console.log(state.myAddresses);
+    }
+
+    const SetMyDefaultAddress = (value) => {
+        dispatch({ type: "SET-MY-DEFAULT-ADDRESSES", payload: value });
+    }
+
 
     const toggleEditFact = () => {
         dispatch({ type: "TOGGLE-EDIT-FACT" });
@@ -174,6 +186,9 @@ function AppProvider({ children }) {
         currentCategory: { id: 0, name: '', subcategories: [] },
         products: data.products,
         productsFilter: data.products,
+        // # this should load when the user is auth
+        myAddresses: data.user.address,
+        myDefaultAddress: false,
         sizeSelected: '',
         qtySelected: 1,
         traking: false,
@@ -398,7 +413,9 @@ function AppProvider({ children }) {
             setSelecteQty,
             sizeFilterPressed,
             setCartCount,
-            addToCart
+            addToCart,
+            setMyAddresses,
+            SetMyDefaultAddress
         }
         }
     >

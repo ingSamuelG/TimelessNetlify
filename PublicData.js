@@ -2030,6 +2030,33 @@ export const data = {
             "id": 22,
             "name": "ZAPATILLA"
         }
-    ]
+    ],
+
+    user: {
+        user_id: "6148ecd9bfd80d77750edbbc",
+        user_name: "Watson Clayton",
+        user_email: "watson_clayton@gmail.com",
+        user_phone: "+584145786234",
+        address: [{
+            id: "6148ecd97c1924e4bd0eb132",
+            addressee: "Kathy Cooley",
+            street: "Ashland Place",
+            building: "casa 13-87",
+            city: "Greenwich",
+            state: "Maryland",
+            country: "Mexico",
+            postal: 3001
+        }, {
+            id: "6148ecd96a101ff0e52a3131",
+            addressee: "Mcdonald Ratliff",
+            street: "Glenmore Avenue",
+            building: "casa 13-87",
+            city: "Como",
+            state: "Iowa",
+            country: "Mexico",
+            postal: 3001
+        }]
+
+    }
 
 }

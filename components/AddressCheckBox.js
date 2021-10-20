@@ -7,7 +7,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-function AddressCheckBox({ addresses, fun, state }) {
+function AddressCheckBox({ addresses = [], fun, state }) {
     const { myDefaultAddress } = useGlobalContext()
 
     return (

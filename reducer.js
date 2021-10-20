@@ -83,6 +83,21 @@ export const reducer = (state, action) => {
         }
     }
 
+    if (action.type == 'SET-MY-ADDRESSES') {
+        const newArray = [...state.myAddresses, action.payload]
+        return {
+            ...state,
+            myAddresses: newArray
+        }
+    }
+
+    if (action.type == 'SET-MY-DEFAULT-ADDRESSES') {
+        return {
+            ...state,
+            myDefaultAddress: action.payload
+        }
+    }
+
     if (action.type == 'SET-SIZE-PRESSED') {
         return {
             ...state,
