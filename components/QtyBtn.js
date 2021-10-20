@@ -1,17 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { alpha, styled } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import React, { useState } from 'react'
 import styles from '../styles/QtyBtn.module.css';
 import IconButton from '@mui/material/IconButton';
-import TextField from '@mui/material/TextField';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import DeleteIcon from '@mui/icons-material/Delete';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import Typography from '@mui/material/Typography';
 import RemoveIcon from '@mui/icons-material/Remove';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AddIcon from '@mui/icons-material/Add';
 import { useGlobalContext } from '../context';
 import { makeStyles } from '@mui/styles';
@@ -79,18 +70,20 @@ export const QtyBtn = ({ row }) => {
     let productQuantityLeft = 0
 
     const handleQuantities = (value) => {
-
-        productQuantityLeft = entry.filter((ent) => {
+        productQuantity = entry.filter((ent) => {
             return ent.size == row.size
         }).map((ent) => {
             return ent.qty
         }).reduce((total, current) => {
             return total + current
-        }) - row.qty
-
-        let cartWithoutProduct = cart.filter((prod) => {
-            return row.entry_id !== prod.entry_id
         })
+
+
+        if (value > productQuantity) {
+            setRegularQty(productQuantity)
+        } else {
+            setRegularQty(parseInt(value))
+        }
 
     }
 
@@ -182,7 +175,7 @@ export const QtyBtn = ({ row }) => {
                                     id="outlined-qty"
                                     value={regularQty}
                                     onChange={(e) => {
-                                        alert("cambie")
+                                        handleQuantities(e.target.value)
                                     }}
                                     fullWidth
                                     variant="outlined"
@@ -204,11 +197,6 @@ export const QtyBtn = ({ row }) => {
                         </Grid>
                     </Grid>
 
-                </Grid>
-                <Grid item xs={12}>
-                    {(error && regularQty >= productQuantity) ? (<Typography variant="caption" color="error" display="block" >
-                        Cantidad maxima o minima
-                    </Typography>) : ""}
                 </Grid>
             </Grid>
         </>

@@ -20,7 +20,7 @@ function ShipmentTypeCheckBox({ types, fun }) {
                     }}
                 >
                     {types.map((type) => {
-                        return <FormControlLabel value={type.cost} control={<Radio />} label={`${type.label} ($${type.cost})`} />
+                        return <FormControlLabel key={`${type.label} ($${type.cost})`} value={type.cost} control={<Radio />} label={`${type.label} ($${type.cost})`} />
                     })}
 
                 </RadioGroup>

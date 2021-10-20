@@ -1,0 +1,13 @@
+.desktop{
+    height: 400px;
+}
+
+
+@media (max-width: 600px) {
+
+  .desktop {
+    visibility: hidden;
+    display: none;
+  }
+
+}

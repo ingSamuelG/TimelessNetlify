@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../../styles/Add.module.css'
 import ProductMobileTableCart from '../../components/ProductMobileTableCart';
 import { useGlobalContext } from '../../context';
-import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
+import AddressForm from '../../components/AddressForm';
 import CartTable from '../../components/CartTable';
 import AddressSelection from '../../components/AddressSelection';
 import Grid from '@mui/material/Grid';
 
 export default function Index() {
     const { setSubmenuClosed } = useGlobalContext()
+
 
     return (
         <div className={styles.container} onMouseOver={setSubmenuClosed}>
@@ -26,7 +28,8 @@ export default function Index() {
                         <ProductMobileTableCart />
                     </Grid>
 
-                    <Grid item xs={6}>
+                    <Grid item lg={6} xs={12}>
+                        <AddressForm />
                     </Grid>
 
                     <Grid item lg={6} xs={12}>
@@ -36,7 +39,7 @@ export default function Index() {
 
                 </Grid>
             </div>
-        </div>
+        </div >
     )
 }
 

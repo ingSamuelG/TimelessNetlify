@@ -3,15 +3,18 @@ import Grid from '@mui/material/Grid';
 import { ccyFormat, subtotal } from './ProductMobileTableCart';
 import Typography from '@mui/material/Typography';
 import AddressCheckBox from './AddressCheckBox';
+import { useGlobalContext } from '../context';
 import { data } from '../PublicData';
 import ShipmentTypeCheckBox from './ShipmentTypeCheckBox';
 import Button from '@mui/material/Button';
 
-export default function AddressSelection({ addresses }) {
+export default function AddressSelection() {
     const store = require('store')
+    const { myAddresses } = useGlobalContext()
     const cart = store.get('cart')
     const [envio, setEnvio] = useState(300)
     const [address, setAddress] = useState("")
+
 
     return (
         <Grid container direction="row"
@@ -30,19 +33,19 @@ export default function AddressSelection({ addresses }) {
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }}>
+            <Grid item xs={6} style={{ textAlign: "center", borderLeft: "1px solid #dbd9d9" }}>
                 <Typography variant="body1" >
                     {ccyFormat(subtotal(cart))}
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center" }} >
                 <Typography variant="overline">
                     Envio:
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center", borderLeft: "1px solid #dbd9d9" }} >
                 {/* # this should be dinamic  */}
                 <ShipmentTypeCheckBox types={[{ label: "Tipo I", cost: 300 },
                 { label: "Tipo II", cost: 400 },
@@ -50,17 +53,19 @@ export default function AddressSelection({ addresses }) {
             </Grid>
 
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center" }} >
                 {/* # this should be dinamic  */}
                 <Typography variant="overline">
                     Dirección:
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderRight: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center", borderLeft: "1px solid #dbd9d9" }} >
                 {/* # this should be dinamic  */}
-                <AddressCheckBox addresses={data.user.address} fun={setAddress} />
+                <AddressCheckBox addresses={myAddresses} fun={setAddress} state={address} />
             </Grid>
+
+
 
             <Grid item xs={6} style={{ textAlign: "center" }} >
                 <Typography variant="overline">
@@ -74,7 +79,7 @@ export default function AddressSelection({ addresses }) {
                 </Typography>
             </Grid>
 
-            <Grid item xs={6} style={{ textAlign: "center", borderTop: "1px solid #dbd9d9" }} >
+            <Grid item xs={6} style={{ textAlign: "center", borderTop: "1px solid #dbd9d9", margin: 25 }} >
                 <Button variant="contained" fullWidth>Finalizar Compra</Button>
             </Grid>
 
