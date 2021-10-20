@@ -42,7 +42,7 @@ const ProductCard = ({ product }) => {
                             </div>
                         </Grid>
                     </Grid>
-                    <div style={{ height: '420px', width: '400px', backgroundImage: toggleImg ? `url(${product.images[0].src})` : `url(${product.images[1].src})`, backgroundSize: '100% 100%' }}>
+                    <div className={styles.images} style={{ backgroundImage: toggleImg ? `url(${product.images[0].src})` : `url(${product.images[1].src})`, backgroundSize: '100% 100%' }}>
 
                     </div>
 
