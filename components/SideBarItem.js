@@ -50,8 +50,8 @@ const SideBarItem = ({ category }) => {
                 <List component="div" disablePadding>
                     {category.subcategories.map((subcategory) => {
                         return (
-                            <Link href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
-                                <ListItem key={subcategory.id} button className={classes.nested}>
+                            <Link key={subcategory.id} href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
+                                <ListItem button className={classes.nested}>
                                     <ListItemIcon>
                                         <Image
                                             src={`/${subcategory.icon_url}`}

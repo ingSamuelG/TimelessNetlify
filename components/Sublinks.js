@@ -12,8 +12,8 @@ const Sublinks = ({ category }) => {
             alignItems="center">
             {category.subcategories.map((subcategory) => {
 
-                return <Link href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
-                    <Grid item key={`${subcategory.name}${subcategory.id}`} style={{ cursor: "pointer" }}  >
+                return <Link key={`${subcategory.name}${subcategory.id}`} href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
+                    <Grid item style={{ cursor: "pointer" }}  >
                         <Grid container spacing={2} justifyContent="center"
                             alignItems="center">
 
