@@ -13,4 +13,9 @@
   .container {
     padding-top: 200px;
   }
+
+  .filterBtn {
+    top: 200px;
+    left: 20px;
+  }
 }

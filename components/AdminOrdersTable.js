@@ -100,27 +100,90 @@ const columns = [
         width: 250,
     },
 
+];
 
 
+const columnsWoLinks = [
+    {
+        field: 'user_name',
+        headerName: 'Nombre de cliente',
+        flex: 1,
+        editable: false,
+    },
+    {
+        field: 'state',
+        headerName: 'Status',
+        width: 250,
+        editable: true,
+        valueFormatter: (params) => {
+            let value
+            switch (params.value) {
+                case 0:
+                    value = 'Orden recibida'
+                    break;
 
-    // {
-    //     field: 'created_ad',
-    //     headerName: 'Fecha de creación',
-    //     // description: '',
-    //     sortable: false,
-    //     width: 160,
-    //     valueGetter: (params) =>
-    //         `${params.getValue(params.id, 'firstName') || ''} ${params.getValue(params.id, 'lastName') || ''
-    //         }`,
-    // },
+                case 1:
+                    value = 'Pagadas'
+                    break;
+
+                case 2:
+                    value = 'Empacada y lista para despacho'
+                    break;
+
+                case 3:
+                    value = 'Enviada'
+                    break;
+
+                case 4:
+                    value = 'Completada'
+                    break;
+
+                case 5:
+                    value = 'Rembolsada'
+                    break;
+
+                case 6:
+                    value = 'Cancelada'
+                    break;
+
+
+                default: 'N/A'
+                    break;
+            }
+
+            return value
+
+        }
+    },
+
+    {
+        field: 'total',
+        headerName: ' Total',
+        type: 'number',
+        width: 110,
+        editable: false,
+    },
+    {
+        field: 'created_ad',
+        headerName: 'Fecha de creación',
+        // description: '',
+        sortable: false,
+        width: 250,
+    },
+    {
+        field: 'shipped_date',
+        headerName: 'Fecha de envío',
+        // description: '',
+        sortable: false,
+        width: 250,
+    },
 ];
 
 
 
 
-const AdminOrdersTable = () => {
-    const [pageSize, setPageSize] = useState(10)
-    const { orders } = useGlobalContext()
+const AdminOrdersTable = ({ orders, initialPageSize, links = true }) => {
+    const [pageSize, setPageSize] = useState(initialPageSize)
     const router = useRouter()
 
     const handleRedirect = (route) => {
@@ -129,10 +192,10 @@ const AdminOrdersTable = () => {
 
 
     return (
-        <div style={{ height: '90%', width: '80%' }}>
+        <div style={{ height: '90%', width: '90%', margin: 'auto' }}>
             <DataGrid
                 rows={orders}
-                columns={columns}
+                columns={links ? columns : columnsWoLinks}
                 pageSize={pageSize}
                 onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
                 rowsPerPageOptions={[5, 10, 15]}

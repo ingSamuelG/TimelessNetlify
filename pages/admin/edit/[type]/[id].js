@@ -85,26 +85,21 @@ export async function getServerSideProps(context) {
 
     if (context.params.type == "talla") {
         edit_object = data.sizes.find(size => size.id == context.params.id)
-        console.log("entre")
     }
 
     if (context.params.type == "marca") {
         edit_object = data.brands.find(brand => brand.id == context.params.id)
-        console.log("entre")
     }
 
     if (context.params.type == "categoria") {
         edit_object = data.categories.find(cat => cat.id == context.params.id)
-        console.log("entre")
     }
 
     if (context.params.type == "subcategoria") {
         edit_object = data.subcategories.find(subcat => subcat.id == context.params.id)
-        console.log("entre")
     }
 
 
-    console.log(edit_object)
     return {
         props: {
             edit_object,

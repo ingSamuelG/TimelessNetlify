@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { useGlobalContext } from '../context';
 
 const SideBarItem = ({ category }) => {
+    const { setProductFilter, subCategoriesPressed } = useGlobalContext()
 
     const useStyles = makeStyles({
         nested: {
@@ -31,8 +32,10 @@ const SideBarItem = ({ category }) => {
 
     return (
         <>
-            <ListItem button >
-                <Link href={`/category/${category.name.toLowerCase()}`}>
+            <ListItem button>
+                <Link
+                    href={'/categoria/[name]'}
+                    as={`/categoria/${category.name.toLowerCase()}`}>
                     <ListItem>
                         <ListItemText disableTypography primary={<Typography variant="overline" gutterBottom>
                             {category.name}
@@ -46,17 +49,20 @@ const SideBarItem = ({ category }) => {
             <Collapse in={open} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                     {category.subcategories.map((subcategory) => {
-                        return (<ListItem key={subcategory.id} button className={classes.nested}>
-                            <ListItemIcon>
-                                <Image
-                                    src={`/${subcategory.icon_url}`}
-                                    alt={subcategory.name}
-                                    width={100}
-                                    height={100}
-                                />
-                            </ListItemIcon>
-                            <ListItemText primary={subcategory.name} />
-                        </ListItem>)
+                        return (
+                            <Link href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
+                                <ListItem key={subcategory.id} button className={classes.nested}>
+                                    <ListItemIcon>
+                                        <Image
+                                            src={`/${subcategory.icon_url}`}
+                                            alt={subcategory.name}
+                                            width={100}
+                                            height={100}
+                                        />
+                                    </ListItemIcon>
+                                    <ListItemText primary={subcategory.name} />
+                                </ListItem>
+                            </Link>)
                     })}
 
                 </List>

@@ -74,6 +74,11 @@ function AppProvider({ children }) {
         dispatch({ type: "SET_PRODUCT_FILTER", payload: newProducts });
     };
 
+    const setProductFilter = (value) => {
+        dispatch({ type: "SET_PRODUCT_FILTER", payload: value });
+    };
+
+
     const resetProductFilter = () => {
         dispatch({ type: "SET_PRODUCT_FILTER", payload: state.products });
     };
@@ -179,6 +184,7 @@ function AppProvider({ children }) {
         sideBarOpen: false,
         filterSideBarOpen: false,
         adminSideBarOpen: false,
+        myUser: data.user,
         myCart: [],
         searching: false,
         subMenuOpen: false,
@@ -397,6 +403,7 @@ function AppProvider({ children }) {
             toggleEditEnvio,
             setColorFilter,
             setProductFilterFromColors,
+            setProductFilter,
             resetProductFilter,
             colorFilterPressed,
             setCategoryFilter,

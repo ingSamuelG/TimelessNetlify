@@ -7,6 +7,12 @@ import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
 import ClearIcon from '@mui/icons-material/Clear';
 import Grid from '@mui/material/Grid';
+import ListItem from '@mui/material/ListItem';
+import Typography from '@mui/material/Typography';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import Link from 'next/link';
 import Image from 'next/image';
 import SideBarItem from './SideBarItem';
 import { useGlobalContext } from '../context';
@@ -53,6 +59,20 @@ export default function SwipeableTemporaryDrawer() {
                 </ListSubheader>
             }
         >
+
+            <ListItem button onClick={toggleSideBar} >
+                <Link href={`/store`}>
+                    <ListItem>
+                        <ListItemText disableTypography primary={<Typography variant="overline" gutterBottom>
+                            Tienda
+                        </Typography>} />
+                    </ListItem>
+                </Link>
+                <IconButton >
+                    <StorefrontIcon />
+                </IconButton>
+            </ListItem>
+
             {categories.map((category) => {
                 return <SideBarItem key={category.id} category={category} />
             })}

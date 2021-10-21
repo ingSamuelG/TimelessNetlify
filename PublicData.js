@@ -216,9 +216,9 @@ export const data = {
         },
         {
             id: "6148ecd90d4e7c8980141d8e",
-            user_id: "6148ecd9e2ffc2b29d699ec2",
-            user_name: "Wilson Joyner",
-            user_email: "WilsonJoyner@gmail.com",
+            user_id: "6148ecd9bfd80d77750edbbc",
+            user_name: "Watson Clayton",
+            user_email: "watson_clayton@gmail.com",
             user_phone: "+584145786234",
             state: 2,
             total: 5310,
@@ -1921,119 +1921,119 @@ export const data = {
 
     subcategories: [
         {
-            "category_id": 3,
-            "id": 1,
-            "name": "ABRIGO"
+            category_id: 3,
+            id: 1,
+            name: "ABRIGO"
         },
         {
-            "category_id": 3,
-            "id": 2,
-            "name": "BIKINI"
+            category_id: 3,
+            id: 2,
+            name: "BIKINI"
         },
         {
-            "category_id": 3,
-            "id": 3,
-            "name": "BLAZER"
+            category_id: 3,
+            id: 3,
+            name: "BLAZER"
         },
         {
-            "category_id": 3,
-            "id": 4,
-            "name": "BLUSA"
+            category_id: 3,
+            id: 4,
+            name: "BLUSA"
         },
         {
-            "category_id": 4,
-            "id": 5,
-            "name": "BOTAS"
+            category_id: 4,
+            id: 5,
+            name: "BOTAS"
         },
         {
-            "category_id": 4,
-            "id": 6,
-            "name": "BOTINES"
+            category_id: 4,
+            id: 6,
+            name: "BOTINES"
         },
         {
-            "category_id": 3,
-            "id": 7,
-            "name": "CHALECO"
+            category_id: 3,
+            id: 7,
+            name: "CHALECO"
         },
         {
-            "category_id": 3,
-            "id": 8,
-            "name": "CHAMARRA"
+            category_id: 3,
+            id: 8,
+            name: "CHAMARRA"
         },
         {
-            "category_id": 2,
-            "id": 9,
-            "name": "CROSSODY"
+            category_id: 2,
+            id: 9,
+            name: "CROSSODY"
         },
         {
-            "category_id": 2,
-            "id": 10,
-            "name": "CRUZADA"
+            category_id: 2,
+            id: 10,
+            name: "CRUZADA"
         },
         {
-            "category_id": 3,
-            "id": 11,
-            "name": "FALDA"
+            category_id: 3,
+            id: 11,
+            name: "FALDA"
         },
         {
-            "category_id": 4,
-            "id": 12,
-            "name": "FLAT"
+            category_id: 4,
+            id: 12,
+            name: "FLAT"
         },
         {
-            "category_id": 4,
-            "id": 13,
-            "name": "FLATS"
+            category_id: 4,
+            id: 13,
+            name: "FLATS"
         },
         {
-            "category_id": 3,
-            "id": 14,
-            "name": "JEANS"
+            category_id: 3,
+            id: 14,
+            name: "JEANS"
         },
         {
-            "category_id": 1,
-            "id": 15,
-            "name": "LENTES"
+            category_id: 1,
+            id: 15,
+            name: "LENTES"
         },
         {
-            "category_id": 4,
-            "id": 16,
-            "name": "MOCASIN"
+            category_id: 4,
+            id: 16,
+            name: "MOCASIN"
         },
         {
-            "category_id": 3,
-            "id": 17,
-            "name": "SACO"
+            category_id: 3,
+            id: 17,
+            name: "SACO"
         },
         {
-            "category_id": 4,
-            "id": 18,
-            "name": "SANDALIAS"
+            category_id: 4,
+            id: 18,
+            name: "SANDALIAS"
         },
         {
-            "category_id": 3,
-            "id": 19,
-            "name": "SWEATER"
+            category_id: 3,
+            id: 19,
+            name: "SWEATER"
         },
         {
-            "category_id": 4,
-            "id": 20,
-            "name": "TENNIS"
+            category_id: 4,
+            id: 20,
+            name: "TENNIS"
         },
         {
-            "category_id": 3,
-            "id": 21,
-            "name": "VESTIDO"
+            category_id: 3,
+            id: 21,
+            name: "VESTIDO"
         },
         {
-            "category_id": 4,
-            "id": 22,
-            "name": "ZAPATILLA"
+            category_id: 4,
+            id: 22,
+            name: "ZAPATILLA"
         }
     ],
 
     user: {
-        user_id: "6148ecd9bfd80d77750edbbc",
+        id: "6148ecd9bfd80d77750edbbc",
         user_name: "Watson Clayton",
         user_email: "watson_clayton@gmail.com",
         user_phone: "+584145786234",

@@ -5,11 +5,11 @@ import { useGlobalContext } from "../../context";
 
 
 export default function Admin() {
-    const { adminSideBarOpen } = useGlobalContext()
+    const { adminSideBarOpen, orders } = useGlobalContext()
 
     return (
         <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
-            <AdminOrdersTable />
+            <AdminOrdersTable orders={orders} initialPageSize={10} />
         </div>
     )
 }
