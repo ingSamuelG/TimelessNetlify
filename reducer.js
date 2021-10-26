@@ -112,6 +112,13 @@ export const reducer = (state, action) => {
         }
     }
 
+    if (action.type == 'ADD_LIKES') {
+        return {
+            ...state,
+            myLikes: action.payload
+        }
+    }
+
     if (action.type == 'SET-BRAND-PRESSED') {
         return {
             ...state,

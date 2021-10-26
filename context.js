@@ -23,6 +23,10 @@ function AppProvider({ children }) {
         dispatch({ type: "ADD_CART", payload: value });
     };
 
+    const addToLikes = (value) => {
+        dispatch({ type: "ADD_LIKES", payload: value });
+    };
+
     const setSubmenuLocation = (location) => {
         dispatch({ type: "SET_SUBMENU_LOCATION", payload: location });
     };
@@ -177,6 +181,9 @@ function AppProvider({ children }) {
         dispatch({ type: "SET-CART-COUNT", payload: value });
     }
 
+    const cart = store.get('cart')
+    const likes = store.get('likes')
+
 
     const initialState = {
         categories: data.categories,
@@ -185,7 +192,8 @@ function AppProvider({ children }) {
         filterSideBarOpen: false,
         adminSideBarOpen: false,
         myUser: data.user,
-        myCart: [],
+        myCart: cart,
+        myLikes: likes,
         searching: false,
         subMenuOpen: false,
         subMenuLocation: {},
@@ -263,6 +271,8 @@ function AppProvider({ children }) {
         setBrandFilter(createBrandsFromProducts(state.productsFilter))
 
     }, [state.productsFilter])
+
+
 
     // -------------------------------------------------------------------------------------------
 
@@ -399,6 +409,7 @@ function AppProvider({ children }) {
             toggleTracking,
             toggleSideBarAdmin,
             handlenewOrderState,
+            addToLikes,
             toggleEditFact,
             toggleEditEnvio,
             setColorFilter,

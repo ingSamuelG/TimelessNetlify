@@ -5,6 +5,8 @@ import StepLabel from '@mui/material/StepLabel';
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
 import { OrderCard } from './OrderCard';
 
 
@@ -15,7 +17,7 @@ function getSteps() {
 
 
 
-const TrackSteper = ({ order }) => {
+const TrackSteper = ({ order, funcState }) => {
     const steps = getSteps();
     const [isMobile, setisMobile] = useState(false)
 
@@ -39,20 +41,38 @@ const TrackSteper = ({ order }) => {
     return (
 
         <Grid container direction="row"
-            spacing={2}
+            spacing={3}
             justifyContent="flex-start"
-            alignItems="flex-start">
+            alignItems="flex-start" >
 
             <Grid item xs={12}>
-                <Typography variant="h4" display='inline' gutterBottom>
-                    Estatus para orden:
-                </Typography>
-                <Typography variant="h4" display='inline' gutterBottom>
-                    {` ${order.id}`}
-                </Typography>
+                <Grid container direction="row"
+                    spacing={2}
+                    justifyContent="space-between"
+                    alignItems="center">
+
+                    <Grid item >
+                        <Typography variant="h4" display='inline' gutterBottom>
+                            Estatus para orden:
+                        </Typography>
+                        <Typography variant={isMobile ? "body1" : "h4"} display='inline' gutterBottom>
+                            {` ${order.id}`}
+                        </Typography>
+
+                    </Grid>
+
+                    <Grid item style={{ textAlign: "right" }} >
+                        <IconButton color="secondary" aria-label="Close order" onClick={() => {
+                            funcState()
+                        }}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Grid>
+
+                </Grid>
                 <Divider />
             </Grid>
-
+            <Grid item></Grid>
             <Grid container direction="column"
                 spacing={2}
                 justifyContent="flex-start"

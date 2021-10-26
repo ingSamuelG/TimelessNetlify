@@ -4,14 +4,22 @@ import Link from 'next/link'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useGlobalContext } from '../context';
 import IconButton from '@mui/material/IconButton';
 import Grid from '@mui/material/Grid';
-import styles from '../styles/ProductCard.module.css'
+import styles from '../styles/ProductCard.module.css';
+import Tooltip from '@mui/material/Tooltip';
 import SizeCard from './SizeCard';
 
 
 const ProductCard = ({ product }) => {
+    const { myLikes, addToLikes } = useGlobalContext()
     const [toggleImg, setToggleImg] = useState(true)
+
+    const store = require('store')
+    let localLikes = store.get('likes')
+
+    const productOnMyLikes = localLikes.find(pro => pro.id === product.id)
 
 
 
@@ -19,8 +27,25 @@ const ProductCard = ({ product }) => {
         setToggleImg(!toggleImg)
     }
 
+    const addToMyLikes = (product) => {
+        const productOnMyLikes = localLikes.find(pro => pro.id === product.id)
+
+        if (!productOnMyLikes) {
+            store.set('likes', [...localLikes, product])
+            let newLikes = store.get('likes')
+            addToLikes(newLikes)
+        } else {
+            const productsWoLiked = localLikes.filter(pro => pro.id !== product.id)
+            store.set('likes', productsWoLiked)
+            addToLikes(productsWoLiked)
+
+        }
+
+    }
+
+    console.log(myLikes)
+
     return (
-        // <Link href={`/product/${product.slug}`} >
         <div className={styles.wrapper}>
             <Grid
                 container
@@ -35,74 +60,55 @@ const ProductCard = ({ product }) => {
                         alignItems="center">
 
                         <Grid item xs={12}>
+
                             <div className={styles['like-container']} >
-                                <IconButton aria-label="Like" color='secondary' size="small">
-                                    <FavoriteBorderIcon />
-                                </IconButton>
+                                <Tooltip title={productOnMyLikes ? "No me gusta" : "Me gusta"} placement="right-start">
+                                    <IconButton aria-label="Like" color='secondary' size="small" onClick={() => {
+                                        addToMyLikes(product)
+                                    }}>
+                                        {productOnMyLikes ? (<FavoriteIcon />) : (<FavoriteBorderIcon />)}
+                                    </IconButton>
+                                </Tooltip>
                             </div>
+
                         </Grid>
                     </Grid>
-                    <div className={styles.images} style={{ backgroundImage: toggleImg ? `url(${product.images[0].src})` : `url(${product.images[1].src})`, backgroundSize: '100% 100%' }}>
 
-                    </div>
+                    <Link href="/product/[name]" as={`/product/${product.short_description}`}>
+                        <div className={styles.images} style={{ backgroundImage: toggleImg ? `url(${product.images[0].src})` : `url(${product.images[1].src})`, backgroundSize: '100% 100%' }}>
+                        </div>
+                    </Link>
 
-
-                    {/* {toggleImg ? (<Image
-                        src={product.images[0].src}
-                        alt={product.images[0].alt}
-                        height={420}
-                        width={400}
-                    // layout="fill"
-                    // objectFit="contain"
-                    />) : (<Image
-                        src={product.images[1].src}
-                        alt={product.images[0].alt}
-                        height={420}
-                        width={400}
-                        // layout="fill"
-                        objectFit="contain"
-                    />)} */}
                 </Grid>
 
-                <Grid item xs={12} style={{ textAlign: 'center' }}>
-                    <Typography variant="subtitle2" display="block" gutterBottom>
-                        {product.brand.name}
-                    </Typography>
-                    <Typography variant="caption" display="block">
-                        {product.short_description.toLowerCase()}
-                    </Typography>
-                </Grid>
+                <Link href="/product/[name]" as={`/product/${product.short_description}`}>
+                    <>
+                        <Grid item xs={12} style={{ textAlign: 'center' }}>
+                            <Typography variant="subtitle2" display="block" gutterBottom>
+                                {product.brand.name}
+                            </Typography>
+                            <Typography variant="caption" display="block">
+                                {product.short_description.toLowerCase()}
+                            </Typography>
+                        </Grid>
 
-                {/* <Grid item xs={12}>
-                    <SizeCard entries={product.entry} />
-                </Grid> */}
-                {/* 
-                <Grid item xs={12}>
-                    <Typography variant="caption" display="inline" >
-                        {`Discount: `}
-                    </Typography>
-
-                    <Typography variant="caption" display="inline" style={{ color: '#4E9B47' }}>
-                        {(product.discount * 100).toFixed(0)}%
-                    </Typography>
-                </Grid> */}
-
-                <Grid item xs={12}>
-                    <Typography variant="caption" display="inline" style={{ textDecoration: 'line-through' }}>
-                        ${product.real_price}
-                    </Typography>
-                    <Typography variant="caption" display="inline">
-                        {`  -  `}
-                    </Typography>
-                    <Typography variant="subtitle1" display="inline" color='secondary' >
-                        ${product.discount_price}
-                    </Typography>
-                </Grid>
-
+                        <Grid item xs={12}>
+                            <Typography variant="caption" display="inline" style={{ textDecoration: 'line-through' }}>
+                                ${product.real_price}
+                            </Typography>
+                            <Typography variant="caption" display="inline">
+                                {`  -  `}
+                            </Typography>
+                            <Typography variant="subtitle1" display="inline" color='secondary' >
+                                ${product.discount_price}
+                            </Typography>
+                        </Grid>
+                    </>
+                </Link >
             </Grid>
 
-        </div>
-        // </Link >
+        </div >
+
 
     )
 }

@@ -11,7 +11,7 @@ import OrderTrackForm from '../../components/OrderTrackForm';
 
 
 export default function TrackPage() {
-    const { setSubmenuClosed, traking, orders } = useGlobalContext()
+    const { setSubmenuClosed, traking, orders, toggleTracking } = useGlobalContext()
 
     return (
         <div className={styles.container} onMouseOver={setSubmenuClosed}>
@@ -25,7 +25,7 @@ export default function TrackPage() {
                 </Grid>
                 <Fade in={traking}>
                     <Grid item xs={12}>
-                        <TrackSteper order={orders[0]} />
+                        <TrackSteper order={orders[0]} funcState={toggleTracking} />
                     </Grid>
                 </Fade>
             </Grid>

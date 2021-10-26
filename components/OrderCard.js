@@ -46,6 +46,7 @@ export const OrderCard = ({ order_details }) => {
                         <Table size="small" aria-label="a dense table">
                             <TableHead>
                                 <TableRow>
+                                    <TableCell align="center">Img Referencia</TableCell>
                                     <TableCell align="center">Producto</TableCell>
                                     <TableCell align="center">Cantidad</TableCell>
                                     <TableCell align="center">Precio/Unitario</TableCell>
@@ -56,6 +57,9 @@ export const OrderCard = ({ order_details }) => {
                                 {order_details.map((detail) => (
                                     <TableRow key={detail.product_id}>
                                         <TableCell align="center">
+                                            <Image src={`/products/${detail.product_id}.png`} height={70} width={70} />
+                                        </TableCell>
+                                        <TableCell align="center">
                                             {detail.product_id}
                                         </TableCell>
                                         <TableCell align="center">{detail.qty}</TableCell>
@@ -65,18 +69,18 @@ export const OrderCard = ({ order_details }) => {
                                 ))}
 
                                 <TableRow>
-                                    <TableCell align="right" colSpan={2}>Subtotal</TableCell>
+                                    <TableCell align="right" colSpan={3}>Subtotal</TableCell>
                                     <TableCell rowSpan={1} />
                                     <TableCell align="center">{ccyFormat(invoiceSubtotal)}</TableCell>
                                 </TableRow>
 
                                 <TableRow>
-                                    <TableCell align="right" colSpan={2}>Impuesto</TableCell>
+                                    <TableCell align="right" colSpan={3}>Impuesto</TableCell>
                                     <TableCell align="center">{(TAX_RATE * 100).toFixed(0)}%</TableCell>
                                     <TableCell align="center">{ccyFormat(invoiceTaxes)}</TableCell>
                                 </TableRow>
                                 <TableRow>
-                                    <TableCell align="right" colSpan={2}>Total</TableCell>
+                                    <TableCell align="right" colSpan={3}>Total</TableCell>
                                     <TableCell rowSpan={1} />
                                     <TableCell align="center">{ccyFormat(invoiceTotal)}</TableCell>
                                 </TableRow>

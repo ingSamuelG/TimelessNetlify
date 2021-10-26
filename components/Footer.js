@@ -9,14 +9,16 @@ import SendIcon from '@mui/icons-material/Send';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
 import styles from '../styles/Footer.module.css'
+import { borderColor } from '@mui/system';
+
 
 
 const CssTextField = withStyles({
     root: {
         '& .MuiInputBase-root': {
-            color: '#fff'
+            color: '#fff',
+            borderColor: "#fff"
         },
         '& .MuiOutlinedInput-root': {
             '& fieldset': {
@@ -26,6 +28,10 @@ const CssTextField = withStyles({
                 borderColor: '#DF1A7C',
             },
         },
+        '& .MuiInputLabel-root': {
+            color: "#fff",
+            borderColor: "#fff"
+        }
     },
 })(TextField);
 

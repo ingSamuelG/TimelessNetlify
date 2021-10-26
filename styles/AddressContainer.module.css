@@ -1,0 +1,7 @@
+.card {
+  background-color: #efefef;
+  padding: 20px;
+  border-radius: 15px;
+  border: 1px solid #eccbdc;
+  transition: all 5s;
+}

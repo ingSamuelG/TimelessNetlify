@@ -8,7 +8,6 @@ import Badge from '@mui/material/Badge';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -133,11 +132,6 @@ const Navbar = () => {
                         <Grid item lg={4} xs={4} className='cl-btns'>
                             <Grid container spacing={1} direction="row" justifyContent="center"
                                 alignItems="center" className='cl-btns' >
-                                <Grid item className='cl-btns'>
-                                    <IconButton aria-label="text our WhatsApp" size='small' color="inherit">
-                                        <FavoriteBorderIcon color='secondary' />
-                                    </IconButton>
-                                </Grid>
                                 <Grid item className={styles.nav_links}>
                                     <IconButton aria-label="text our WhatsApp" size='small' color="inherit" onClick={() => { toggleSearching(!searching) }} >
                                         <SearchIcon color='secondary' />
@@ -153,15 +147,17 @@ const Navbar = () => {
                                     </Link>
                                 </Grid>
                                 <Grid item className='cl-btns'>
-                                    <IconButton
-                                        edge="end"
-                                        aria-label="account of current user"
-                                        aria-haspopup="true"
-                                        color="inherit"
-                                        styles={{ padding: '4px' }}
-                                    >
-                                        <AccountCircle color='secondary' />
-                                    </IconButton>
+                                    <Link href="/mi-cuenta">
+                                        <IconButton
+                                            edge="end"
+                                            aria-label="account of current user"
+                                            aria-haspopup="true"
+                                            color="inherit"
+                                            styles={{ padding: '4px' }}
+                                        >
+                                            <AccountCircle color='secondary' />
+                                        </IconButton>
+                                    </Link>
                                 </Grid>
                             </Grid>
                         </Grid>

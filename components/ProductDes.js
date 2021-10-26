@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
@@ -100,7 +99,6 @@ const ProductDes = ({ product }) => {
     }
 
     return (
-        // <Link href={`/product/${product.slug}`} >
         <div className={styles.container}>
             <Grid container direction="row"
                 justifyContent="center"
@@ -202,7 +200,6 @@ const ProductDes = ({ product }) => {
             </Grid>
 
         </div>
-        // </Link >
 
     )
 }
