@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Typography from '@mui/material/Typography';
@@ -28,10 +28,14 @@ const ProductDes = ({ product }) => {
     let productInCart = 0
 
 
-    useEffect(() => {
-        setSize(entry[0].size)
-
+    const setDefaultSize = useCallback((value) => {
+        setSize(value)
     }, [])
+
+
+    useEffect(() => {
+        setDefaultSize(entry[0].size)
+    }, [setDefaultSize])
 
     try {
         productQuantity = entry.filter((ent) => {

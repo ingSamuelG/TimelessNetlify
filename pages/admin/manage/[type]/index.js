@@ -98,7 +98,7 @@ function Index() {
                             alignItems="center">
 
                             <Grid item xs={6}>
-                                <Link href={`/admin/edit/${type}/${params.getValue(params.id, 'id')}`}>
+                                <Link href={`/admin/edit/${type}/${params.getValue(params.id, 'id')}`} passHref>
                                     <IconButton aria-label="delete" color='secondary'>
                                         <EditIcon />
                                     </IconButton>

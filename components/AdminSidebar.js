@@ -89,7 +89,7 @@ const AdminSidebar = () => {
                     </Grid>
                 </ListItem>
 
-                <Link href="/admin/orders">
+                <Link href="/admin/orders" passHref>
                     <ListItemButton>
                         <>
                             <ListItemIcon>

@@ -12,7 +12,7 @@ const OrderGeneralCard = ({ date, email, state, dateShip, shipAddress, address, 
 
     useEffect(() => {
         handlenewOrderState(state)
-    }, [])
+    }, [state])
 
 
     const handleChangeOrder = (event) => {

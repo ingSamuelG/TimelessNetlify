@@ -61,7 +61,7 @@ export default function SwipeableTemporaryDrawer() {
         >
 
             <ListItem button onClick={toggleSideBar} >
-                <Link href={`/store`}>
+                <Link href={`/store`} passHref>
                     <ListItem>
                         <ListItemText disableTypography primary={<Typography variant="overline" gutterBottom>
                             Tienda

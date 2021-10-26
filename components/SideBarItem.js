@@ -35,7 +35,9 @@ const SideBarItem = ({ category }) => {
             <ListItem button>
                 <Link
                     href={'/categoria/[name]'}
-                    as={`/categoria/${category.name.toLowerCase()}`}>
+                    as={`/categoria/${category.name.toLowerCase()}`}
+                    passHref
+                >
                     <ListItem>
                         <ListItemText disableTypography primary={<Typography variant="overline" gutterBottom>
                             {category.name}
@@ -50,7 +52,7 @@ const SideBarItem = ({ category }) => {
                 <List component="div" disablePadding>
                     {category.subcategories.map((subcategory) => {
                         return (
-                            <Link key={subcategory.id} href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`}>
+                            <Link key={subcategory.id} href={'/categoria/[name]/[subcategoria]'} as={`/categoria/${category.name.toLowerCase()}/${subcategory.name.toLowerCase()}`} passHref>
                                 <ListItem button className={classes.nested}>
                                     <ListItemIcon>
                                         <Image

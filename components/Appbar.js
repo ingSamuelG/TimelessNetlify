@@ -26,13 +26,16 @@ const Navbar = () => {
         setCartCount()
     }, [myCart])
 
+    const changeSearching = React.useCallback((value) => {
+        toggleSearching(value)
+    }, [])
 
     React.useEffect(() => {
         function handleResize() {
             if (window.innerWidth < 900) {
-                toggleSearching(true);
+                changeSearching(true);
             } else {
-                toggleSearching(false);
+                changeSearching(false);
             }
         }
 
@@ -41,7 +44,7 @@ const Navbar = () => {
         window.addEventListener("resize", handleResize);
 
         return () => window.removeEventListener("resize", handleResize);
-    }, []);
+    }, [changeSearching]);
 
     const displaySubmenu = (e) => {
         const page = e.target.textContent
@@ -96,13 +99,14 @@ const Navbar = () => {
                             <Grid container spacing={1} justifyContent="space-around"
                                 alignItems="center" >
                                 <Grid id='home' item className={styles.nav_links}>
-                                    <Link href='/' >
+                                    <Link href='/' passHref>
                                         <Typography variant="overline" className={`${styles.link_btn}  cl-btns`} gutterBottom>
                                             home
-                                        </Typography></Link>
+                                        </Typography>
+                                    </Link>
                                 </Grid>
                                 <Grid id='store' item className={styles.nav_links}>
-                                    <Link href='/store/' className={styles.link_btn}>
+                                    <Link href='/store/' className={styles.link_btn} passHref>
                                         <Typography variant="overline" className={`${styles.link_btn}  cl-btns`} gutterBottom>
                                             Store
                                         </Typography>
@@ -111,13 +115,14 @@ const Navbar = () => {
                                 {categories.map((category) => {
                                     return (
                                         <Grid key={category.id} item className={styles.nav_links} >
-                                            <Link href={`categoria/${category.name.toLowerCase()}`}  ><Typography id={category.name} variant="overline" className={styles.link_btn} gutterBottom onMouseOver={displaySubmenu}>
+                                            <Link href={`categoria/${category.name.toLowerCase()}`} passHref ><Typography id={category.name} variant="overline" className={styles.link_btn} gutterBottom onMouseOver={displaySubmenu}>
                                                 {category.name}
-                                            </Typography></Link>
+                                            </Typography>
+                                            </Link>
                                         </Grid>)
                                 })}
                                 <Grid item className={styles.togle_btn}>
-                                    <Link href='/' >
+                                    <Link href='/' passHref>
                                         <Image
                                             src="/logo_let.png"
                                             alt="Picture of the author"
@@ -138,7 +143,7 @@ const Navbar = () => {
                                     </IconButton>
                                 </Grid>
                                 <Grid item className='cl-btns'>
-                                    <Link href="/carrito">
+                                    <Link href="/carrito" passHref>
                                         <IconButton aria-label="text our WhatsApp" size='small' color="inherit">
                                             <Badge color="secondary" badgeContent={cartCount}>
                                                 <ShoppingCartOutlinedIcon color='secondary' />
@@ -147,7 +152,7 @@ const Navbar = () => {
                                     </Link>
                                 </Grid>
                                 <Grid item className='cl-btns'>
-                                    <Link href="/mi-cuenta">
+                                    <Link href="/mi-cuenta" passHref>
                                         <IconButton
                                             edge="end"
                                             aria-label="account of current user"

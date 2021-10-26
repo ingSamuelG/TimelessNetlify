@@ -10,7 +10,7 @@ export default function AddressContainer({ addresses }) {
             alignItems="center" >
 
             {addresses.map((address, index) => {
-                return (<UserAddressCard address={address} index={index} />)
+                return (<UserAddressCard key={address.id} address={address} index={index} />)
             })}
 
 

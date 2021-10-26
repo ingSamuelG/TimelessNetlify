@@ -53,7 +53,7 @@ const Footer = () => {
                             Shop
                         </Typography>
                         {categories.map((category) => {
-                            return <Link key={category.id} href={`/category/${category.name.toLowerCase()}`}>
+                            return <Link key={category.id} href={`/category/${category.name.toLowerCase()}`} passHref>
                                 <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                     {`- ${category.name}`}
                                 </Typography>
@@ -64,27 +64,27 @@ const Footer = () => {
                         <Typography variant="subtitle2" display="block" style={{ color: '#DF1A7C' }} gutterBottom>
                             Ayuda
                         </Typography>
-                        <Link href={`/pages/about-us`}>
+                        <Link href={`/pages/about-us`} passHref>
                             <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                 - Quienes somos
                             </Typography>
                         </Link>
-                        <Link href={`/pages/contact-us`}>
+                        <Link href={`/pages/contact-us`} passHref>
                             <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                 - Contacto
                             </Typography>
                         </Link>
-                        <Link href={`/pages/seguimiento`}>
+                        <Link href={`/pages/seguimiento`} passHref>
                             <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                 - Envio
                             </Typography>
                         </Link>
-                        <Link href={`/pages/pay`}>
+                        <Link href={`/pages/pay`} passHref>
                             <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                 - Pagos
                             </Typography>
                         </Link>
-                        <Link href={`/pages/faq`}>
+                        <Link href={`/pages/faq`} passHref>
                             <Typography variant="caption" display="block" style={{ cursor: 'pointer' }} gutterBottom>
                                 - Preguntas frecuentes
                             </Typography>

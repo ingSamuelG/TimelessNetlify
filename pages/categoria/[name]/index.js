@@ -29,12 +29,11 @@ export default function Index() {
         return product.category.id == id
     })
 
-    console.log(products)
 
-    useEffect(() => {
-        setProductFilter(products)
-        subCategoryFilterPressed({ name: name, state: true })
-    }, [])
+    // useEffect(() => {
+    //     setProductFilter(products)
+    //     subCategoryFilterPressed({ name: name, state: true })
+    // }, [])
 
     const anyFilterPressed = (colorPressed.state || subCategoriesPressed.state || categoriesPressed.state || sizePressed.state)
 

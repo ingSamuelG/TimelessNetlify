@@ -15,7 +15,7 @@ function AdminCollapse({ state, clase, primaryText }) {
     return (
         <Collapse in={state} timeout="auto" unmountOnExit>
             <List component="div" disablePadding>
-                <Link href="/admin/add/[type]" as={`/admin/add/${primaryText}`}>
+                <Link href="/admin/add/[type]" as={`/admin/add/${primaryText}`} passHref>
                     <ListItemButton >
                         <ListItemIcon className={clase}>
                             <AddIcon />
@@ -24,7 +24,7 @@ function AdminCollapse({ state, clase, primaryText }) {
                     </ListItemButton>
                 </Link>
                 <Divider />
-                <Link href="/admin/add/excel/[type]" as={`/admin/add/excel/${primaryText}`}>
+                <Link href="/admin/add/excel/[type]" as={`/admin/add/excel/${primaryText}`} passHref>
                     <ListItemButton>
                         <ListItemIcon className={clase}>
                             <PublishIcon />
@@ -33,7 +33,7 @@ function AdminCollapse({ state, clase, primaryText }) {
                     </ListItemButton>
                 </ Link>
                 <Divider />
-                <Link href="/admin/manage/[type]" as={`/admin/manage/${primaryText}`}>
+                <Link href="/admin/manage/[type]" as={`/admin/manage/${primaryText}`} passHref>
                     <ListItemButton>
                         <ListItemIcon className={clase}>
                             <TableViewIcon />

@@ -57,7 +57,7 @@ export const OrderCard = ({ order_details }) => {
                                 {order_details.map((detail) => (
                                     <TableRow key={detail.product_id}>
                                         <TableCell align="center">
-                                            <Image src={`/products/${detail.product_id}.png`} height={70} width={70} />
+                                            <Image src={`/products/${detail.product_id}.png`} alt={detail.product_id} height={70} width={70} />
                                         </TableCell>
                                         <TableCell align="center">
                                             {detail.product_id}

@@ -20,7 +20,7 @@ export default function NoData({ message }) {
                 </Grid>
 
                 <Grid item >
-                    <Image src="/logos/undraw_No_data_re_kwbl.svg" height={220} width={220} />
+                    <Image src="/logos/undraw_No_data_re_kwbl.svg" alt={message} height={220} width={220} />
                 </Grid>
             </Grid>
         </div>

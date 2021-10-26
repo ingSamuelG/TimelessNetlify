@@ -43,7 +43,6 @@ const ProductCard = ({ product }) => {
 
     }
 
-    console.log(myLikes)
 
     return (
         <div className={styles.wrapper}>
@@ -74,14 +73,14 @@ const ProductCard = ({ product }) => {
                         </Grid>
                     </Grid>
 
-                    <Link href="/product/[name]" as={`/product/${product.short_description}`}>
+                    <Link href="/product/[name]" as={`/product/${product.short_description}`} passHref>
                         <div className={styles.images} style={{ backgroundImage: toggleImg ? `url(${product.images[0].src})` : `url(${product.images[1].src})`, backgroundSize: '100% 100%' }}>
                         </div>
                     </Link>
 
                 </Grid>
 
-                <Link href="/product/[name]" as={`/product/${product.short_description}`}>
+                <Link href="/product/[name]" as={`/product/${product.short_description}`} passHref>
                     <>
                         <Grid item xs={12} style={{ textAlign: 'center' }}>
                             <Typography variant="subtitle2" display="block" gutterBottom>

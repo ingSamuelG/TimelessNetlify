@@ -37,6 +37,7 @@ export default function ProductGallery({ images }) {
                         <Image src={image.src}
                             layout="fill"
                             objectFit="contain"
+                            alt={image.alt}
                         />
                     </SwiperSlide>)
                 }
@@ -48,6 +49,7 @@ export default function ProductGallery({ images }) {
                         <Image src={image.src}
                             layout="fill"
                             objectFit="contain"
+                            alt={image.alt}
                         />
                     </SwiperSlide>)
                 }

@@ -15,10 +15,10 @@ export default function Subcategoria({ products }) {
 
     const { productFilter, setFilterSideBarOpen, colorPressed, subCategoriesPressed, categoriesPressed, sizePressed, brandPressed, setProductFilter, subCategoryFilterPressed } = useGlobalContext()
 
-    useEffect(() => {
-        setProductFilter(products)
-        subCategoryFilterPressed({ name: subcategoria, state: true })
-    }, [])
+    // useEffect(() => {
+    //     setProductFilter(products)
+    //     subCategoryFilterPressed({ name: subcategoria, state: true })
+    // }, [])
 
     const anyFilterPressed = (colorPressed.state || subCategoriesPressed.state || categoriesPressed.state || sizePressed.state)
 
