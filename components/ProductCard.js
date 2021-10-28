@@ -82,7 +82,7 @@ const ProductCard = ({ product }) => {
 
                 <Link href="/product/[name]" as={`/product/${product.short_description}`} passHref>
                     <>
-                        <Grid item xs={12} style={{ textAlign: 'center' }}>
+                        <Grid item xs={12} className={styles['title-container']}>
                             <Typography variant="subtitle2" display="block" gutterBottom>
                                 {product.brand.name}
                             </Typography>
