@@ -8,13 +8,13 @@ import { useGlobalContext } from '../context'
 import ProductContainer from '../components/ProductContainer'
 import axios from 'axios';
 
-export default function Home({ data }) {
+export default function Home() {
   const { setSubmenuClosed, products } = useGlobalContext()
 
 
 
   // console.log(data.products[0].category.name)
-  console.log(data.products[0])
+  // console.log(data.products[0])
 
   return (
     <div className={styles.wrapper}>
@@ -83,22 +83,22 @@ export default function Home({ data }) {
 
 Home.layout = 'main'
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
 
-  let myVar = {}
+//   let myVar = {}
 
-  try {
-    const response = await axios.get('http://127.0.0.1:5000/api/v1/products/');
-    myVar = response
-    console.log(response)
+//   try {
+//     const response = await axios.get('http://127.0.0.1:5000/api/v1/products/');
+//     myVar = response
+//     console.log(response)
 
-  } catch (error) {
-    console.error(error);
-  }
+//   } catch (error) {
+//     console.error(error);
+//   }
 
-  const data = myVar.data
+//   const data = myVar.data
 
-  return {
-    props: { data } // will be passed to the page component as props
-  }
-}
+//   return {
+//     props: { data } // will be passed to the page component as props
+//   }
+// }
