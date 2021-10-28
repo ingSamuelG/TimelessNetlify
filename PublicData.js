@@ -2,7 +2,17 @@ export const data = {
     products: [
 
         {
-            id: "MOSABR000549", short_description: "ABRIGO BEIGE DE LANA", condition: "Perfecta", long_description: "Aqui va una descripcion larga", real_price: 8000, discount: 0.75, discount_price: 2000, category: { id: 3, name: "Ropa" }, brand: { id: 46, name: "MOSCHINO" }, composition: "Algodon 149", subcategory: { id: 1, name: "ABRIGO" },
+            id: "MOSABR000549",
+            short_description: "ABRIGO BEIGE DE LANA",
+            condition: "Perfecta",
+            long_description: "Aqui va una descripcion larga",
+            real_price: 8000,
+            discount: 0.75,
+            discount_price: 2000,
+            category: { id: 3, name: "Ropa" },
+            brand: { id: 46, name: "MOSCHINO" },
+            composition: "Algodon 149",
+            subcategory: { id: 1, name: "ABRIGO" },
             entry: [
                 { product_id: 'MOSABR000549', size_id: 35, size: 'XS', color_id: 1, color_name: "test1", hex: '#f5f5dc', qty: 5 },
                 { product_id: 'MOSABR000549', size_id: 31, size: 'US 2', color_id: 2, color_name: "test2", hex: '#e3bc9a', qty: 2 },
@@ -2035,6 +2045,8 @@ export const data = {
     user: {
         id: "6148ecd9bfd80d77750edbbc",
         user_name: "Watson Clayton",
+        first_name: "Watson",
+        last_name: "Clayton",
         user_email: "watson_clayton@gmail.com",
         user_phone: "+584145786234",
         address: [{

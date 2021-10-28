@@ -3,6 +3,7 @@ import styles from '../../../styles/Store.module.css'
 import ProductContainer from '../../../components/ProductContainer'
 import Button from '@mui/material/Button';
 import { useGlobalContext } from '../../../context'
+import HeadTag from '../../../components/HeadTag';
 import SideBarFilter from '../../../components/SideBarFilter'
 import TuneIcon from '@mui/icons-material/Tune';
 import { data } from '../../../PublicData'
