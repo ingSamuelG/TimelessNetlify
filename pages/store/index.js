@@ -58,7 +58,7 @@ const Index = () => {
                         "comprar bolsas",
                         "comprar bolsas segunda mano",
                         "bolsas segunda mano"]} />
-            <Button className={styles.filterBtn} variant={`${anyFilterPressed ? 'contained' : 'outlined'}`} disableElevation startIcon={<TuneIcon />} onClick={() => {
+            <Button className={styles.filterBtn} style={{ position: "sticky" }} variant={`${anyFilterPressed ? 'contained' : 'outlined'}`} disableElevation startIcon={<TuneIcon />} onClick={() => {
                 setFilterSideBarOpen(true)
             }}>
                 {`Filtrar ${anyFilterPressed ? `(${howManyFiltersPressed()})` : ''}`}
