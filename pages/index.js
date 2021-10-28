@@ -9,7 +9,7 @@ import ProductContainer from '../components/ProductContainer'
 import axios from 'axios';
 
 export default function Home({ data }) {
-  const { setSubmenuClosed } = useGlobalContext()
+  const { setSubmenuClosed, products } = useGlobalContext()
 
 
 
@@ -63,17 +63,17 @@ export default function Home({ data }) {
         </Grid>
 
         <Grid item xs={12}>
-          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'ropa').splice(0, 8)} />
+          <ProductContainer products={products.filter(product => product.category.name.toLowerCase() === 'ropa')} />
         </Grid>
 
         <Grid item xs={12}>
-          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'zapatos').splice(0, 8)} />
+          <ProductContainer products={products.filter(product => product.category.name.toLowerCase() === 'zapatos')} />
         </Grid>
         <Grid item xs={12}>
-          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'accesorios').splice(0, 8)} />
+          <ProductContainer products={products.filter(product => product.category.name.toLowerCase() === 'accesorios')} />
         </Grid>
         <Grid item xs={12}>
-          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'bolsa').splice(0, 8)} />
+          <ProductContainer products={products.filter(product => product.category.name.toLowerCase() === 'bolsa')} />
         </Grid>
       </Grid>
     </div>
