@@ -1,6 +1,9 @@
 .grow {
   flex-grow: 1;
 }
+.logo {
+  cursor: pointer;
+}
 
 .link_btn {
   height: 100%;

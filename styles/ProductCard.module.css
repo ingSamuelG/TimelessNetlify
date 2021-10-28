@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.title-container {
+  text-align: center;
+  text-transform: capitalize;
+}
+
 .like-container {
   display: flex;
   align-items: flex-end;

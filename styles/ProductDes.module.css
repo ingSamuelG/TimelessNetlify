@@ -5,6 +5,10 @@
   width: 30vw;
   height: 70vh;
 }
+
+.title {
+  text-transform: capitalize;
+}
 @media (max-width: 768px) {
   .container {
     padding-top: 50px;
