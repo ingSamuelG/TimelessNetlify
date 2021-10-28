@@ -56,7 +56,7 @@ export default function UserContainer({ menu }) {
         if (myLikes.length > 0) {
             return <Fade in={true} timeout={{ enter: 800, exit: 1000 }} ><div className={styles.bordes}><ProductContainer products={myLikes} tittle={"Te gustan"} AutoWidth={true} /></div></Fade>
         } else {
-            return <Fade in={true} timeout={{ enter: 800, exit: 1000 }}><div><NoData message={"Tus likes estan vacios"} /></div></Fade>
+            return <Fade in={true} timeout={{ enter: 800, exit: 1000 }}><div><NoData message={"Tus likes estan vacios"} imgSrc="/logos/undraw_No_data_re_kwbl.svg" /></div></Fade>
 
         }
 

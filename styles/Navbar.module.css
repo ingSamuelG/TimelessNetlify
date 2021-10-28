@@ -7,9 +7,10 @@
   background: transparent;
   border-color: transparent;
   font-size: 1.1rem;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: 1px;
   cursor: pointer;
+  font-size: 0.9rem;
   width: 5rem;
 }
 

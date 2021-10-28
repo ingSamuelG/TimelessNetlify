@@ -5,6 +5,7 @@ import styles from '../../../../styles/Add.module.css';
 import AddColorForm from '../../../../components/AddColorForm';
 import AddSizeForm from '../../../../components/AddSizeForm';
 import AddBrandFrom from '../../../../components/AddBrandFrom';
+import HeadTag from '../../../../components/HeadTag';
 import AddCategoriesFrom from '../../../../components/AddCategoriesFrom';
 import AddSubCatForm from '../../../../components/AddSubCatForm';
 import AddProductForm from '../../../../components/AddProductForm';
@@ -19,50 +20,81 @@ const Index = ({ edit_object }) => {
     const { type, id } = router.query
 
     if (type == 'color') {
-        return (
+        return (<>
+            <HeadTag
+                title={`Editando el color: ${edit_object.name}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddColorForm color={edit_object} />
             </div>
+        </>
         )
     }
 
     if (type == 'marca') {
-        return (
+        return (<>
+            <HeadTag
+                title={`Editando Marca: ${edit_object.name}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddBrandFrom brand={edit_object} />
             </div>
+        </>
         )
     }
 
     if (type == 'categoria') {
-        return (
+        return (<>
+            <HeadTag
+                title={`Editando Categoria: ${edit_object.name}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddCategoriesFrom category={edit_object} />
             </div>
+        </>
         )
     }
 
     if (type == 'talla') {
-        return (
+        return (<>
+            <HeadTag
+                title={`Editando talla: ${edit_object.name}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddSizeForm size={edit_object} />
             </div>
+        </>
         )
     }
 
     if (type == 'subcategoria') {
         return (
-            <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
-                <AddSubCatForm subcategory={edit_object} />
-            </div>
+            <>
+                <HeadTag
+                    title={`Editando subcategoria: ${edit_object.name}`}
+                    robotContent={["noindex", "nofollow"]}
+                />
+                <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
+                    <AddSubCatForm subcategory={edit_object} />
+                </div>
+            </>
         )
     }
 
     if (type == 'producto') {
-        return (
+        return (<>
+            <HeadTag
+                title={`Editando producto: ${edit_object.short_description}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddProductForm product={edit_object} />
             </div>
+        </>
         )
     }
 

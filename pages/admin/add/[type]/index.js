@@ -1,5 +1,6 @@
 import React from 'react'
 import Typography from '@mui/material/Typography';
+import HeadTag from '../../../../components/HeadTag';
 import { useGlobalContext } from "../../../../context";
 import styles from '../../../../styles/Add.module.css';
 import AddColorForm from '../../../../components/AddColorForm';
@@ -17,51 +18,81 @@ const Index = () => {
     const router = useRouter()
     const { type } = router.query
 
+
     if (type == 'color') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir un color nuevo"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddColorForm />
             </div>
+        </>
         )
     }
 
     if (type == 'marca') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir una marca nueva"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddBrandFrom />
             </div>
+        </>
         )
     }
 
     if (type == 'categoria') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir una categoria nueva"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddCategoriesFrom />
             </div>
-        )
+        </>)
     }
 
     if (type == 'talla') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir una talla nueva"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddSizeForm />
             </div>
+        </>
         )
     }
 
     if (type == 'subcategoria') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir una subcategoria nueva"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddSubCatForm />
             </div>
+        </>
         )
     }
 
     if (type == 'producto') {
-        return (
+        return (<>
+            <HeadTag
+                title={"Añadir un producto nuevo"}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
                 <AddProductForm />
             </div>
+        </>
         )
     }
 

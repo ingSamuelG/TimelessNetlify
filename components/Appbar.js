@@ -131,6 +131,13 @@ const Navbar = () => {
                                         />
                                     </Link>
                                 </Grid>
+                                <Grid id='track' item className={styles.nav_links}>
+                                    <Link href='/track' passHref>
+                                        <Typography variant="overline" className={`${styles.link_btn}  cl-btns`} gutterBottom>
+                                            Seguimiento
+                                        </Typography>
+                                    </Link>
+                                </Grid>
                             </Grid>
                         </Grid>
 

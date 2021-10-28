@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/NoData.module.css'
 import Typography from '@mui/material/Typography';
 
-export default function NoData({ message }) {
+export default function NoData({ message, imgSrc }) {
     return (
         <div className={styles.main}>
             <Grid container
@@ -20,7 +20,7 @@ export default function NoData({ message }) {
                 </Grid>
 
                 <Grid item >
-                    <Image src="/logos/undraw_No_data_re_kwbl.svg" alt={message} height={220} width={220} />
+                    <Image src={imgSrc} alt={message} height={220} width={220} />
                 </Grid>
             </Grid>
         </div>

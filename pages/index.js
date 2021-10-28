@@ -6,11 +6,15 @@ import styles from '../styles/Home.module.css'
 import Grid from '@mui/material/Grid';
 import { useGlobalContext } from '../context'
 import ProductContainer from '../components/ProductContainer'
+import axios from 'axios';
 
 export default function Home({ data }) {
-  const { setSubmenuClosed, products } = useGlobalContext()
+  const { setSubmenuClosed } = useGlobalContext()
 
-  const recetas = data.cat
+
+
+  // console.log(data.products[0].category.name)
+  console.log(data.products[0])
 
   return (
     <div className={styles.wrapper}>
@@ -57,17 +61,19 @@ export default function Home({ data }) {
         <Grid item xs={12}>
           <div className={styles.separetor}></div>
         </Grid>
+
         <Grid item xs={12}>
-          <ProductContainer products={products.filter(product => product.category.name === 'Ropa')} />
+          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'ropa').splice(0, 8)} />
+        </Grid>
+
+        <Grid item xs={12}>
+          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'zapatos').splice(0, 8)} />
         </Grid>
         <Grid item xs={12}>
-          <ProductContainer products={products.filter(product => product.category.name === 'Zapatos')} />
+          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'accesorios').splice(0, 8)} />
         </Grid>
         <Grid item xs={12}>
-          <ProductContainer products={products.filter(product => product.category.name === 'Accesorios')} />
-        </Grid>
-        <Grid item xs={12}>
-          <ProductContainer products={products.filter(product => product.category.name === 'Bolsa')} />
+          <ProductContainer products={data.products.filter(product => product.category.name.toLowerCase() === 'bolsa').splice(0, 8)} />
         </Grid>
       </Grid>
     </div>
@@ -77,12 +83,22 @@ export default function Home({ data }) {
 
 Home.layout = 'main'
 
-export function getStaticProps() {
+export async function getServerSideProps(context) {
+
+  let myVar = {}
+
+  try {
+    const response = await axios.get('http://127.0.0.1:5000/api/v1/products/');
+    myVar = response
+    console.log(response)
+
+  } catch (error) {
+    console.error(error);
+  }
+
+  const data = myVar.data
+
   return {
-    props: {
-      data: {
-        cat: [{ titulo: "Smothie de pina" }]
-      }
-    }
+    props: { data } // will be passed to the page component as props
   }
 }

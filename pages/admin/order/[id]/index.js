@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../../../../styles/Order.module.css'
 import OrderDetails from '../../../../components/OrderDetails';
+import HeadTag from '../../../../components/HeadTag';
 import { data } from '../../../../PublicData';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -15,6 +16,10 @@ const Order = ({ order }) => {
 
     return (
         <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
+            <HeadTag
+                title={`Editando orden:  ${order.id}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <div className={styles.main}>
                 <Grid container
                     direction="row"

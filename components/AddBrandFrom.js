@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Grid from '@mui/material/Grid';
 
 const AddBrandFrom = ({ brand }) => {
-    const [FBrand, setFbrand] = useState(brand ? brand.id : "")
+    const [FBrand, setFbrand] = useState(brand ? brand.name : "")
     const [img, setImg] = useState(brand ? brand.img_url : "")
 
     return (

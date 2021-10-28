@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../../../../styles/Add.module.css';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
+import HeadTag from '../../../../components/HeadTag';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Typography from '@mui/material/Typography';
@@ -420,6 +421,10 @@ function Index() {
 
 
     return (<div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
+        <HeadTag
+            title={`Administrando tabla ${type}:`}
+            robotContent={["noindex", "nofollow"]}
+        />
 
         <div style={{ margin: '25px 25px', textTransform: 'capitalize' }}>
             <Typography variant="h5">

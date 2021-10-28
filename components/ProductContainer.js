@@ -10,6 +10,8 @@ import { useGlobalContext } from '../context';
 const ProductContainer = ({ products, hasTittle = true, tittle = products[0].category.name, AutoWidth = false }) => {
     const { setSubmenuClosed } = useGlobalContext()
 
+    // console.log(products)
+
     return (
         <div className={styles.wrapper} style={AutoWidth ? { width: "auto" } : null}>
             <Grid

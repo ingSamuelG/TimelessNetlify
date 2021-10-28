@@ -5,11 +5,12 @@ import { useGlobalContext } from '../../context';
 import HeadTag from '../../components/HeadTag';
 import AddressForm from '../../components/AddressForm';
 import CartTable from '../../components/CartTable';
+import Nodata from '../../components/NoData'
 import AddressSelection from '../../components/AddressSelection';
 import Grid from '@mui/material/Grid';
 
 export default function Index() {
-    const { setSubmenuClosed } = useGlobalContext()
+    const { setSubmenuClosed, myCart } = useGlobalContext()
 
 
     return (
@@ -58,14 +59,27 @@ export default function Index() {
                 <Grid container direction='row' spacing={5} justifyContent="center"
                     alignItems="center">
 
-                    <Grid item xs={12} className={styles["desktop-cart"]}>
-                        <CartTable />
-                    </Grid>
 
-                    <Grid item xs={12} className={styles["mobile-cart"]}>
-                        <ProductMobileTableCart />
-                    </Grid>
 
+                    {myCart.length > 0 ? (<>
+
+                        <Grid item xs={12} className={styles["desktop-cart"]}>
+                            <CartTable />
+                        </Grid>
+
+                        <Grid item xs={12} className={styles["mobile-cart"]}>
+                            <ProductMobileTableCart />
+                        </Grid>
+
+                        <Grid item lg={6} xs={12}>
+                            <AddressForm />
+                        </Grid>
+
+                        <Grid item lg={6} xs={12}>
+                            <AddressSelection />
+                        </Grid>
+                    </>) : <Nodata message="Tu carrito esta vacio" imgSrc="/logos/undraw_No_data_re_kwbl.svg" />}
+                    {/* 
                     <Grid item lg={6} xs={12}>
                         <AddressForm />
                     </Grid>
@@ -73,7 +87,7 @@ export default function Index() {
                     <Grid item lg={6} xs={12}>
                         <AddressSelection />
                     </Grid>
-
+ */}
 
                 </Grid>
             </div>

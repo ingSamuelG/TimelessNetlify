@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Paper from '@mui/material/Paper';
+import HeadTag from '../../../../../components/HeadTag';
 import CircularProgress from '@mui/material/CircularProgress';
 import LinearProgress from '@mui/material/LinearProgress';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
@@ -28,6 +29,10 @@ const Index = () => {
 
     return (
         <div className={`${styles.container} ${adminSideBarOpen ? null : styles.open}`}>
+            <HeadTag
+                title={`Subiendo Excel : ${type}`}
+                robotContent={["noindex", "nofollow"]}
+            />
             <Paper style={{ padding: '50px' }} spacing={5}>
                 <Grid container spacing={2} direction='row' justifyContent='center' alignItems='center'>
 

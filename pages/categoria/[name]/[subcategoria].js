@@ -36,6 +36,39 @@ export default function Subcategoria({ products }) {
 
     return (
         <div className={styles.container}>
+            <HeadTag
+                title={"Timeless Closet store"}
+                description={"Nuestra tienda vende los marcas mas elegantes del mercado a un clic de distancia con toda la seguridad y tranquilidad que ofrece nuestro sitio"}
+                robotContent={["index", "follow"]}
+                keywords={
+                    ["Tienda de ropa",
+                        "Tienda en internet",
+                        "Tienda de segunda mano",
+                        "tiendas en linea",
+                        "comprar por internet",
+                        "vender ropa usada",
+                        "ropa segunda mano",
+                        "paginas para comprar",
+                        "comprar ropa de segunda mano",
+                        "ropa moschino",
+                        "tienda online",
+                        "tienda online en mexico",
+                        "ropa fendi",
+                        "tienda de ropa de segunda mano",
+                        "ropa calzedonia",
+                        "mejor precio",
+                        "zapatos",
+                        "comprar zapatos",
+                        "comprar zapatos segunda mano",
+                        "zapatos segunda mano",
+                        "lentes",
+                        "comprar lentes",
+                        "comprar lentes segunda mano",
+                        "lentes segunda mano",
+                        "bolsas",
+                        "comprar bolsas",
+                        "comprar bolsas segunda mano",
+                        "bolsas segunda mano"]} />
             <Button className={styles.filterBtn} variant={`${anyFilterPressed ? 'contained' : 'outlined'}`} disableElevation startIcon={<TuneIcon />} onClick={() => {
                 setFilterSideBarOpen(true)
             }}>
